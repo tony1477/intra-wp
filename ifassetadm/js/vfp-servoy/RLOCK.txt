@@ -1,0 +1,25 @@
+ RLOCK() - databaseManager.acquireLock()
+
+
+Attempts to lock one or more records in a table.
+
+ 
+VFP code example
+
+? RLOCK()               && lock the current record of the current table
+? RLOCK("customers")    && lock the current record of the customers table
+? RLOCK("customers", "65")    && lock record 65 of the customers table
+? RLOCK("customers", "1,2,3") && lock records 1,2,3 of the customers table
+
+ 
+Servoy code example
+
+databaseManager.acquireLock(foundset, 0);  // lock the current record
+databaseManager.acquireLock(foundset, -1);
+databaseManager.acquireLock(foundset, 65); // lock row 65
+
+// Alternatively:
+
+globals.RLOCK(foundset, 0);    // lock the current record 
+globals.RLOCK(foundset, -1);   // lock all rows 
+globals.RLOCK(foundset, 65);   // lock row 65  

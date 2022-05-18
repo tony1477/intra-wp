@@ -1,0 +1,18 @@
+ REPLICATE() - globals.REPLICATE()
+
+
+Returns a character string that contains a specified character expression repeated a specified number of times.
+
+ 
+VFP code example
+? REPLICATE("$",5)       && Outputs $$$$$
+
+ 
+Servoy code example
+application.output(globals.REPLICATE("$",5))  // Outputs $$$$$
+
+Note: REPLICATE() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+When you look at the code of the REPLICATE() function in the VFP2Servoy Toolkit you see that there is no easy way to do this in Servoy (or we haven't found it yet) so here using the function instead of the Servoy syntax saves time.  

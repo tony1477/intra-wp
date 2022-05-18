@@ -1,0 +1,23 @@
+ SKIP - controller.setSelectedIndex(1);
+
+
+Move the record pointer to the previous or next record.
+
+ 
+VFP code example
+// go to the next record
+USE Customers
+IF NOT EOF()
+   SKIP
+ENDIF
+
+// go to the previous record
+IF NOT BOF()
+   SKIP -1
+ENDIF
+
+ 
+Servoy code example
+// go to the next record controller.setSelectedIndex(controller.getSelectedIndex()+1);
+
+// go to the previous record controller.setSelectedIndex(controller.getSelectedIndex()-1);

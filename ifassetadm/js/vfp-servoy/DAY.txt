@@ -1,0 +1,19 @@
+ DAY() - date.getDate()
+
+
+Returns the numeric day of the month for a given date(time) expression.
+
+ 
+VFP code example
+d = DATE(2012,10,23)
+? DAY(d)                                 // 23
+
+ 
+Servoy code example
+var d = new Date(2012,9,23)              // MONTH 9 = OCTOBER  !!
+application.output(d.getDate())          // 23
+
+// OR using the DAY() function alternative:
+
+var d = new Date(2012,9,23)             
+application.output(globals.DAY(d))       // 23

@@ -1,0 +1,57 @@
+ TYPE() - typeof()
+
+
+Returns the data type of an expression. As you may know VFP advises the use of VARTYPE() instead of TYPE(). The difference is that with TYPE() the variable name must be surrounded by quotes and therefor be passed as a string literal. Internally the variable is then evaluated and the type returned. With the VARTYPE() function the variable itself is passed and the contents rather than the variable will be received as a parameter.
+
+In Javascript the typeof() function is used to determine the type of an expression. However this would force us to use the feared eval() (which is nonsense if you know what your doing and don't eval user input). Besides that it is not possible to implement the TYPE() function in the same way as it is in VFP because the scope of the actual variable is unknown within the function.
+
+Therefor the TYPE() and VARTYPE() function have both been implemented in the same way (the VARTYPE() way). The good news is that VARTYPE() also recognizes Date types which is not the case for Javascripts typeof().
+
+ 
+VFP code example
+cText = "Hello"
+? TYPE("cText") && returns "C"  
+
+dDate = DATE()
+? TYPE("dDate") && returns "D"  
+
+** Possible types:
+**
+** C = Character, Memo, Varchar, Varchar (Binary)
+** D = Date
+** G = General
+** L = Logical
+** N = Numeric, Float, Double, Integer
+** O = Object
+** Q = Blob, Varbinary
+** T = Datetime
+** U = Undefined/unknown
+** X = Null
+** Y = Currency
+
+ 
+Servoy code examplee
+var cText = "Hello";
+typeof(cText);          // returns string
+
+var dDate = new Date();
+typeof(dDate);          // returns object !
+
+// Possible types: string, number, boolean, object, null, function,
+//                 undefined
+
+// alternatively:
+
+var cText = "Hello";
+globals.TYPE(cText);   // returns string  (NOTE! NO QUOTES)
+
+var dDate = new Date();
+globals.TYPE(dDate);   // returns date !! (NOTE! NO QUOTES)
+
+// alternatively:
+
+var cText = "Hello";
+globals.VARTYPE(cText);   // returns string
+
+var dDate = new Date();
+globals.VARTYPE(dDate);   // returns date !!

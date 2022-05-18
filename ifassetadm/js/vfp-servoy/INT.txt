@@ -1,0 +1,18 @@
+ INT - globals.INT()
+
+
+Evaluates a numeric expression and returns the integer portion of the expression. Because the Math library in Javascript does not have an INT() function it has been added to the VFP2Servoy Toolkit using serveral other Math functions.
+
+ 
+VFP code example
+INT(3.75)  && return 3  
+INT(-3.75) && return 3  
+
+ 
+Servoy code example
+var num = -3.75
+if(num < 0){Math.ceil(num)}else{Math.floor(num)};
+
+// alternatively:
+
+globals.INT(-3.75); 

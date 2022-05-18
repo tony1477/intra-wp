@@ -1,0 +1,17 @@
+ STRTOFILE() - plugins.file.appendToTXTFile()
+
+
+Writes the contents of a character string to a file.
+
+ 
+VFP code example
+STRTOFILE("Hello World!"+CHR(13), "c:\temp\hello.txt") && appends string  
+
+ 
+Servoy code example
+plugins.file.appendToTXTFile("c:\\temp\\hello.txt", "Hello World!\n");
+
+// alternatively:
+
+globals.STRTOFILE("Hello World!\n", "c:\\temp\\hello.txt"); 
+

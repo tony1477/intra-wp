@@ -1,0 +1,20 @@
+ RD - plugins.file.deleteFolder()
+
+
+Removes a directory or folder from disk.
+
+ 
+VFP code example
+RD "c:\temp\"         && remove the specified directory from disk
+
+ 
+Servoy code example
+plugins.file.deleteFolder("c:\\temp\\"); // delete folder without warn.
+plugins.file.deleteFolder("c:\\temp\\", true); // delete folder with warn.
+
+// alternatively:
+
+globals.RD("c:\\temp\\"); 
+globals.RD("c:\\temp\\", true); 
+globals.RMDIR("c:\\temp\\"); 
+globals.RMDIR("c:\\temp\\", true); 

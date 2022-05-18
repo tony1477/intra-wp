@@ -1,0 +1,18 @@
+ LEFT() - utils.stringLeft
+
+
+Returns a specified number of characters from a character expression, starting with the leftmost character.
+
+ 
+VFP code example
+myString = "Hello World"
+MESSAGEBOX(LEFT(myString,6),64)
+
+** result: Hello
+
+ 
+Servoy code example
+var myString = "Hello World"
+plugins.dialogs.showInfoDialog('',utils.stringLeft(myString, 6))
+
+// result: Hello

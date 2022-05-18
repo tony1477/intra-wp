@@ -1,0 +1,18 @@
+ LEFT() - utils.stringRight
+
+
+Returns the specified number of rightmost characters from a character string.
+
+ 
+VFP code example
+myString = "Hello World"
+MESSAGEBOX(RIGHT(myString,5),64)
+
+** result: World
+
+ 
+Servoy code example
+var myString = "Hello World";
+plugins.dialogs.showInfoDialog('',utils.stringRight(myString, 5));
+
+// result: World

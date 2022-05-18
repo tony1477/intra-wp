@@ -1,0 +1,16 @@
+VFP code example
+
+DIMENSION aArray(4)
+aArray(1)="Jones"
+aArray(2)="Smith"
+aArray(3)="Peter"
+aArray(4)="John"
+
+? ASCAN(aArray, "Peter")  && returns 3
+
+ 
+Servoy code example
+
+var aArray = ["Jones", "Smith", "Peter", "John"];
+application.output(aArray.indexOf("Peter")) // outputs 2 (zero-based!)
+

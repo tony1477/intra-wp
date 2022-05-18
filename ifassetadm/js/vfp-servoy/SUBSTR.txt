@@ -1,0 +1,44 @@
+ SUBSTR() - string.substr()
+
+
+Returns a character string from the given character expression, starting at a specified position in the character expression and continuing for a specified number of characters. Watch out! The substring function is zero-based!
+
+ 
+VFP code examples
+myString = "Servoy World 2011"
+myString = SUBSTR(myString,8,5) && Index starts at 1
+** result: World
+
+myString = "Hello World"
+myString = SUBSTR(myString,1,1) && Single character
+** result: H
+
+myString = "Hello World"
+myString = SUBSTR(myString,7)
+** result: World
+
+ 
+NOTE! There is a string.substr(startPos, [length]) and a string.substring(startPos, [endPos]) function in Servoy. The difference is that the substr() function works like the SUBSTR() function in VFP and that the substring() functions second parameter is the endPosition as opposed to the length. See the examples for clarification.
+
+ 
+Servoy code examples
+varstyle="color: #660066">var myString = "Servoy World 2011";
+myString = myString.substr(7,5); // Index is zero-based!!
+// result: World
+
+var myString = "Servoy World 2011";
+myString = myString.substring(7,12); // endpos instead of length
+// result: World
+
+varstyle="color: #660066">var myString = "Hello World";
+myString = myString.CharAt(0); // This function does not exist in VFP
+// result: H
+
+var myString = "Hello World";
+myString = myString.substring(6);
+// result: World
+
+NOTE! If you don't like the zero based substring implementation you can als use the following alternative as was pointed out to me by my good friend Alessandro Stefanoni:
+
+// returns 'his'
+var retval = utils.stringMiddle('this is a test',2,3);

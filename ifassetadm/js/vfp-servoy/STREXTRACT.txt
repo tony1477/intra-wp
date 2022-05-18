@@ -1,0 +1,24 @@
+ STREXTRACT() - globals.STREXTRACT()
+
+
+Retrieves a string between two delimiters.
+
+ 
+VFP code example
+** returns: important (case-sensitive)
+? STREXTRACT("<B>This</B> text is <b>important</b>", "<b>", "</b>")
+
+** returns: This  (case-insensitive)
+? STREXTRACT("<B>This</B> text is <b>important</b>", "<b>", "</b>", 1, 1)
+
+** returns: important  (2nd occurrence, case-insensitive)
+? STREXTRACT("<B>This</B> text is <b>important</b>", "<b>", "</b>", 2, 1)
+
+ 
+Servoy code example
+
+var myLine = "<B>This</B> text is <b>important</b>";
+
+globals.STREXTRACT(myLine, "<b>", "</b>");           // returns important
+globals.STREXTRACT(myLine, "<b>", "</b>", 1, true);  // returns This
+globals.STREXTRACT(myLine, "<b>", "</b>", 2, true);  // returns important

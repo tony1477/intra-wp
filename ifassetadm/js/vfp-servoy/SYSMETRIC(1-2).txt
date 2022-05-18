@@ -1,0 +1,19 @@
+ SYSMETRIC(1|2) - application.getScreenHeight() | application.getScreenWidth()
+
+
+Returns the screenheight or width of the currently used display.
+
+ 
+VFP code example
+? SYSMETRIC(1)         && returns the screenwidth
+? SYSMETRIC(2)         && returns the screenheight
+
+ 
+Servoy code example
+application.getScreenWidth();  // returns the screenwidth 
+application.getScreenHeight(); // returns the screenheight 
+
+// alternatively:
+
+globals.SYSMETRIC(1); 
+globals.SYSMETRIC(2); 

@@ -1,0 +1,25 @@
+ AND, OR, NOT - &&, ||, !
+
+
+Logical operators work with all data types and return a Logical value.
+
+ 
+VFP code example
+IF nAmount > 10 AND nAmount <= 100  // logical AND
+
+IF nAmount <= 10 OR (nAmount > 10 AND nAmount <= 20) // logical OR
+
+IF NOT nAmount = 10 // logical NOT  (! and .NOT. are also valid)
+
+ 
+Servoy code example
+if(nAmount > 10 && nAmount <= 100) // logical AND
+
+if(nAmount = 10 || (nAmount > 10 && nAmount <= 20)) // logical OR
+
+if(nAmount != 10) // logical NOT
+
+
+ 
+Conclusion
+Nothing to get excited about. 

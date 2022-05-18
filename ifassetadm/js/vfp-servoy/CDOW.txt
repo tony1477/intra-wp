@@ -1,0 +1,18 @@
+ CDOW() - globals.CDOW()
+
+
+Returns the day of the week from a given Date or DateTime expression.
+
+ 
+VFP code example
+d = DATE(2072,10,15)
+? CDOW(d)      // Saturday
+
+ 
+Servoy code example
+utils.stringFormat('%tA', new Array(new Date(2072,9,15))) // Saturday
+
+// OR using the CDOW() function alternative:
+
+var d = new Date(2072,9,15)              // MONTH 9 = OCTOBER  !!
+application.output(globals.CDOW(d))      // saturday/samstag/zaterdag

@@ -1,0 +1,18 @@
+ SQRT() - Math.sqrt()
+
+
+Returns the square root of the specified numeric expression.
+
+ 
+VFP code example
+? SQRT(4)                   && returns 2
+ 
+
+ 
+Servoy code example
+Math.sqrt(4);               // returns 2.0
+
+// alternatively:
+
+globals.SQRT(4);            // returns 2.0
+

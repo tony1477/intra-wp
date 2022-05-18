@@ -1,0 +1,24 @@
+ = | ==
+
+
+This may be confusing at first but in Visual Foxpro the = operator is used both for testing equality and as an assignment operator. In Servoy/Javascript the = operator is an assigment operator only! The == operator is used for testing equality and works the same as in VFP. In VFP you can partially compare strings (where "abcde" = "abc" but only if SET EXACT=OFF) which you cannot do in Javascript (using the = operator).
+
+ 
+VFP code example
+x = 20                      && assigns 20 to variable x
+? x=20                      && returns .T.
+name = "Smith"              && assigns "Smith" to variable name  
+? name = "Smi"              && returns .T. !!  
+? name == "Smi"             && returns .F.  
+? name == "Smith "          && returns .F. !!  
+? name == alltrim("Smith ") && returns .T. 
+
+
+ 
+Servoy code example
+var x = 20;                 // assigns 20 to variable x
+application.output(x=20);   // assigns 20 to variable x !!
+var name = "Smith";
+name == "Smi";              // returns false  
+name == "Smith";            // returns true  
+

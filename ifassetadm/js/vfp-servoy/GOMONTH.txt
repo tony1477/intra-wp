@@ -1,0 +1,20 @@
+ GOMONTH() - date.setMonth()
+
+
+Returns the date that is a specified number of months before or after a given Datetime expression.
+
+ 
+VFP code example
+d = GOMONTH(DATE(),-3)       && Go 3 months back in time
+
+ 
+Servoy code example
+var d = new Date(dDate.setMonth(dDate.getMonth() + nMonths));
+
+Note: Alternatively use the GOMONTH() function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+I am glad Servoy/Javascript has the syntax to do this, because if you have to code the logic for this yourself things can get messy pretty quickly. 
+
+ 

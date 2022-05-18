@@ -1,0 +1,20 @@
+ INPUTBOX() - plugins.dialogs.showInputDialog()
+
+
+Displays a modal dialog for input of a single string.
+
+ 
+VFP code example
+
+cName = INPUTBOX("Please enter your name:")         
+
+
+ 
+Servoy code example
+
+var cName = plugins.dialogs.showInputDialog("Please enter your name: ");
+
+// alternatively:
+
+globals.INPUTBOX("Please enter your name: ");   
+

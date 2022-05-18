@@ -1,0 +1,38 @@
+ GO BOTTOM - controller.setSelectedIndex(foundset.getSize());
+
+
+Makes the last record of the foundset the active record.
+
+ 
+VFP code example
+// go to the last record of the table
+USE Customers
+GO BOTTOM
+
+// go to the last record of the remote view
+USE v_customers  // assumes you have created a remote view
+GO BOTTOM
+
+
+ 
+Servoy code example
+// go to the last record of the foundset
+controller.setSelectedIndex(foundset.getSize());
+
+// Load all records and go to the last record (not wise with large tables)
+var _nRecCount = databaseManager.getFoundSetCount(foundset);
+var _oRecord = foundset.getRecord(_nRecCount);
+controller.setSelectedIndex(_nRecCount);
+
+// Sophisticated way of retrieving the last 200 results for tables larger // than lets say 5000 records where you dont want to load all data
+foundset.clear();
+if (_nRecCount>5000){
+   var args = new Array();
+   args[0] = _nRecCount-200;
+   controller.loadRecords("select customer_id from customers where "+   
+     "customer_id in (select customer_id from (select ROW_NUMBER() OVER "+
+     "(ORDER BY customers.customer_id) AS RowNumber, " +
+     "customers.customer_id from customers) as temp where " +
+     "temp.RowNumber>? order by RowNumber)", args);
+   controller.setSelectedIndex(200);
+} 

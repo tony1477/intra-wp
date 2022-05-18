@@ -1,0 +1,25 @@
+ GETDIR() - plugins.file.showDirectorySelectDialog()
+
+
+Displays the Directory Select Dialog from which you can choose a directory.
+Note: The GETDIR() function returns JSFile objects from which you can retrieve all the file/folder properties and file/folder manipulation methods. This is more powerful than just returning a string with the foldername and path.
+
+ 
+VFP code example
+cFolder = GETDIR() && select a directory
+
+ 
+Servoy code example
+// returns JSFile (see plugins.file.JSFile for list of props & functions)
+var cFolder = plugins.file.showDirectorySelectDialog();
+cFolder.getPath();   // c:\temp
+cFolder.list();      // [File1.txt, File2.txt] 
+cFolder.listFiles(); // [C:\Temp\File1.txt, C:\Temp\File2.txt] 
+ 
+// alternatively:
+
+// returns JSFile
+var cFolder = globals.GETDIR();
+cFolder.getPath();   // c:\temp
+cFolder.list();      // [File1.txt, File2.txt] 
+cFolder.listFiles(); // [C:\Temp\File1.txt, C:\Temp\File2.txt] 

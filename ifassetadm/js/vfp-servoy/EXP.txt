@@ -1,0 +1,17 @@
+ EXP() - Math.exp()
+
+
+Returns the value of ex where x is a specified numeric expression. The value of e, the base of natural logarithms, is approximately 2.71828
+
+ 
+VFP code example
+? EXP(2)                   && returns 7.38905609893065
+ 
+
+ 
+Servoy code example
+Math.exp(2);               // returns 7.38905609893065
+
+// alternatively:
+
+globals.EXP(2);            // returns 7.38905609893065

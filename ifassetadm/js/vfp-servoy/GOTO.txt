@@ -1,0 +1,14 @@
+ GO TOP - controller.setSelectedIndex(1);
+
+
+Activates the record you specify provided it is in the foundset. Preferrably use the SEEK alternative. Note that a foundset is comparable with a remote view (but then without most of the disadvantages), by default the first 200 records are shown.
+
+ 
+VFP code example
+// go to record x
+USE Customers
+GOTO 100
+
+ 
+Servoy code example
+controller.setSelectedIndex(100);

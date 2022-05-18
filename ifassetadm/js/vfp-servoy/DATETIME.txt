@@ -1,0 +1,22 @@
+ DATETIME() - new Date()
+
+
+Returns the current system date, which is controlled by the operating system, or creates a Date value. You will have a tough time trying to find the Servoy equivalent for VFP's Date(). It works just a little different.
+
+ 
+VFP code example
+? DATETIME()  && returns (2/18/2011 12:54:28 PM) in regional format
+
+ 
+Servoy code example
+var d = new Date();
+application.output(d);  // Fri Feb 18 11:13:40 CET 2011 application.output(d.toLocaleDateString());// February 18, 2011
+application.output(d.toDateString());      // Fri Feb 18 2011
+application.output(d.toLocaleString());    // February 18, 2011 11:13:40 AM CET
+application.output(d.toLocaleTimeString());// 11:13:40 AM CET
+application.output(d.toLocaleString());    // Fri Feb 18 2011 11:13:40 GMT+0100 (CET)
+application.output(d.toTimeString());      // 11:13:40 GMT+0100 (CET)
+application.output(d.toUTCString());       //Fri, 18 Feb 2011 10:13:40 GMT
+
+// dutch VFP datetime: 18-2-2011 20:13:40
+utils.dateFormat(d,'d-M-yyyy HH:mm:ss')

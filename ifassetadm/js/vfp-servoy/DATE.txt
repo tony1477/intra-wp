@@ -1,0 +1,24 @@
+ DATE() - new Date()
+
+
+Returns the current system date, which is controlled by the operating system, or creates a Date value. You will have a tough time trying to find the Servoy equivalent for VFP's Date(). It works just a little different.
+
+ 
+VFP code example
+? DATE()  && returns date (2/18/2011) in format of regional settings
+d = DATE(2012,10,15)  && new date = 10/15/2012 (OCTOBER!)
+
+ 
+Servoy code example
+var d = new Date();
+application.output(d);  // Fri Feb 18 11:13:40 CET 2011
+application.output(d.toLocaleDateString());  // February 18, 2011
+application.output(d.toDateString());        // Fri Feb 18 2011
+
+utils.dateFormat(d,'d-M-yyyy');   // dutch date: 18-2-2011
+
+// initialize a date value
+var d = new Date(2012,9,15);      // initialize a date value OCTOBER=9
+
+// vfp2servoy toolkit
+var d = globals.DATE(2012,10,15)  // initialize a date value OCTOBER=10

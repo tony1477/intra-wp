@@ -1,0 +1,18 @@
+ UPPER() - string.toUpperCase()
+
+
+Returns the specified character expression in uppercase.
+
+ 
+VFP code example
+myString = "Hello World"
+myString = UPPER(myString)
+
+** result: HELLO WORLD
+
+ 
+Servoy code example
+var myString = "Hello World";
+myString = myString.toUpperCase();
+
+// result: HELLO WORLD

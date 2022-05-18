@@ -1,0 +1,23 @@
+ EXIT - break
+
+
+Break allows you to exit a current loop, switch or label.
+
+ 
+VFP code example
+FOR i = 1 TO 10
+   IF i = 7
+      ? "Max. counter reached"
+      EXIT
+   ENDIF
+NEXT
+
+ 
+Servoy code example
+for(var i=0; i<10; i++)
+{
+   if(i==7){
+      application.output("Max. counter reached");
+      break;
+   }
+} 

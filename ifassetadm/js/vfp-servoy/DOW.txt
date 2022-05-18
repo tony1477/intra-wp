@@ -1,0 +1,15 @@
+ DOW() - date.getDay()
+
+
+Returns a numeric day-of-the-week value from a Date or DateTime expression.
+
+ 
+VFP code example
+dayOfWeek = DOW(DATE())     && uses regional settings
+dayOfWeek = DOW(DATE(),1)   && 1=Sunday, 2=Monday etc.
+dayOfWeek = DOW(DATE(),2)   && 1=Monday, 2=Tuesday etc.
+
+ 
+Servoy code example
+var d = new Date();
+var dayOfWeek = d.getDay(); // 0=Sunday, 1=Monday etc.

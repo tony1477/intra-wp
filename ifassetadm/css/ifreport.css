@@ -1,0 +1,43 @@
+body{	
+	font-family: arial,sans-serif;
+	font-size:11px;
+	margin:3px;
+	}
+
+	#ifreport{
+	color:black;
+	padding:6px 2px;
+	}
+
+	#ifreport table{
+	border-collapse:collapse;
+	border: 1px solid;
+	font-size:11px;
+	}
+
+	#ifreport table th{
+	background:F1E7E8;
+	font-weight:bold;
+	vertical-align:middle;
+	}
+
+	#ifreport table td{
+	background:c8bfbf;
+	}
+
+	#ifreport table bp{
+	border:black;
+	}
+
+	.pagebreak{
+	visibility:visible;
+	page-break-after:always;
+	}
+
+	.garis{
+		border:solid 1px;
+	}
+	
+	.nongaris{
+		border: none;
+	}	

@@ -1,0 +1,16 @@
+ FLOOR() - Math.floor()
+
+
+Returns the nearest integer that is less than or equal to the specified numeric expression.
+
+ 
+VFP code example
+amount = 2.33
+? FLOOR(amount)            // Returns 2
+ 
+
+ 
+Servoy code example
+var amount = 2.33;             
+globals.FLOOR(amount);    // returns 2.0
+

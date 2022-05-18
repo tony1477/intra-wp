@@ -1,0 +1,18 @@
+ LOG() - Math.log()
+
+
+Returns the natural logarithm (base e) of the specified numeric expression.
+
+ 
+VFP code example
+? LOG(3)                   && returns 1.09861228866811
+ 
+
+ 
+Servoy code example
+Math.log(3);               // returns 1.09861228866811
+
+// alternatively:
+
+globals.LOG(3);            // returns 1.09861228866811
+

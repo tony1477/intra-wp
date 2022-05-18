@@ -1,0 +1,20 @@
+ WEEK() - globals.WEEK()
+
+
+Returns a number representing the week of the year from a Date(time) expression.
+
+ 
+VFP code example
+? WEEK(DATE())                      // Returns a value between 1 and 53
+
+ 
+Servoy code example
+var d = new Date()             
+application.output(globals.WEEK(new Date())      // ISO 8601 week nr
+application.output(globals.WEEK(new Date(),1)    // USA/Canada week nr
+
+Note: WEEK() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion:
+This is a good example of a function in Visual FoxPro that is easy to use but certainly is not easy to determine in Servoy (as far as I know). I wrote a function that supports both the ISO 8601 (european week numbering) and the USA/Canada week numbering logic. By default the function applies the regional settings. This function could be useful for non-VFP developers as well.   

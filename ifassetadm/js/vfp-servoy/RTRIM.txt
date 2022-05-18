@@ -1,0 +1,15 @@
+ RTRIM() - globals.RTRIM()
+
+
+Removes all trailing spaces from the specified character expression. For ALLTRIM() the utils.stringTrim() alternative is available but for the RTRIM there is none.
+
+ 
+VFP code example
+
+? RTRIM("hello   ") && returns: "hello"
+
+ 
+Servoy code example
+
+globals.RTRIM("hello   ");  // returns: "hello"
+

@@ -1,0 +1,28 @@
+ ISUPPER() - globals.ISUPPER()
+
+
+Determines whether the leftmost character of the specified character expression is an uppercase alphabetic character.
+
+ 
+VFP code example
+
+? ISUPPER('Abc')          && returns .F.
+? ISUPPER('abc')          && returns .T.
+? ISUPPER('9ab')          && returns .F.
+? ISUPPER('éb89')         && returns .T.
+? ISUPPER('_bcdef')       && returns .F.
+
+ 
+Servoy code example
+
+cString = "Ábc";
+cString.charAt(0).match(/[^W0-9_]/)!=null &&
+    cFirstCharacter == cFirstCharacter.toUpperCase(); // returns true
+
+// alternatively
+
+globals.ISUPPER("Abc");      // Returns true
+globals.ISUPPER("abc");      // Returns false
+globals.ISUPPER("9ab");      // Returns false
+globals.ISUPPER("éb89");     // Returns false
+globals.ISUPPER("_bcdef");   // Returns false

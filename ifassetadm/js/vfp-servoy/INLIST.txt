@@ -1,0 +1,17 @@
+ INLIST() - globals.INLIST()
+
+
+Determines whether an expression matches another expression in a set of expressions.
+
+ 
+VFP code example
+
+cMonth = MONTH(customers.birthdate)
+? INLIST(cMonth, 'January', 'February', 'March')  
+
+ 
+Servoy code example
+
+var dDate = new Date();
+var cMonth = utils.stringFormat('%tB', new Array(dDate));
+globals.INLIST(cMonth, 'January', 'February', 'March');  

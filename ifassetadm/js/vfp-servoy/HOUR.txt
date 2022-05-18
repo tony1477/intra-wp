@@ -1,0 +1,18 @@
+ DAY() - date.getHours()
+
+
+Returns the hour portion from a DateTime expression.
+
+ 
+VFP code example
+? HOUR(DATETIME())                     // Returns a value between 0 and 23
+
+ 
+Servoy code example
+var d = new Date()           
+application.output(d.getHours())       // Returns a value between 0 and 23
+
+// OR using the HOUR() function alternative:
+
+var d = new Date()             
+application.output(globals.HOUR(d))    // Returns a value between 0 and 23 

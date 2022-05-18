@@ -1,0 +1,12 @@
+ QUIT - application.exit()
+
+
+Ends execution of the current application. I don't think you would want to call globals.QUIT() instead of application.exit() but as a code reference it serves its purpose.
+
+ 
+VFP code example
+ QUIT
+
+ 
+Servoy code example
+application.exit();

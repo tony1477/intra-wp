@@ -1,0 +1,22 @@
+ RENAME - plugins.file.moveFile()
+
+
+In VFP you can use the RENAME command to rename files within the same directory or move files to another directory.
+Use the MOVEFILE() function to rename and move a file to another folder and the RENAME() function to just rename a file in the same folder.
+
+NOTE: You cannot specify a file path in Servoy with single backslashes in it. The backslash is used to specify special characters (\t=tab for instance). You will have to remember to always use TWO backslashes instead of one to specify a single backslash (c:\\temp\\ instead of c:\temp\). We can't solve this in the function because "c:\temp" will arive in the parameter as "c: temp" (with a tab in it).
+
+
+You cannot use wildcard characters in filenames in Servoy.
+
+ 
+VFP code example
+RENAME c:\temp\test.xml TO c:\temp\test.bak   && moves the file
+
+ 
+Servoy code example
+plugins.file.moveFile("c:\\temp\\test.xml","c:\\temp\\test.bak");
+
+// alternatively:
+
+globals.RENAME("c:\\temp\\test.xml", "c:\\temp\\test.bak"); 

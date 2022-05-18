@@ -1,0 +1,19 @@
+ TIME() - date.toLocaleTimeString()
+
+
+Returns the current system time in 24-hour, eight-character string (hh:mm:ss) format.
+
+ 
+VFP code example
+? TIME(DATETIME())                      // Returns a value between 0 and 59
+
+ 
+Servoy code example
+var d = new Date()           
+application.output(d.toLocaleTimeString())     // 17:37:43 CET
+application.output(d.toTimeString())           // 17:37:43 GMT+0100 (CET)
+
+// OR using the TIME() function alternative:
+
+var d = new Date()             
+application.output(globals.TIME())     // 17:37:43 

@@ -1,0 +1,14 @@
+ CHRTRAN() - globals.CHRTRAN()
+
+
+Replaces each character in a character expression that matches a character in a second character expression with the corresponding character in a third character expression. This function does not exist in Servoy/Javascript. Therefor it has been custom coded in the VFP2Servoy toolkit.
+
+ 
+VFP code example
+
+? CHRTRAN('ABCDEF', 'ACE', 'XYZ')          && Displays XBYDZF
+
+ 
+Servoy code example
+
+globals.CHRTRAN('ABCDEF', 'ACE', 'XYZ');   // Returns XBYDZF

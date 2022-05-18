@@ -1,0 +1,17 @@
+ GETFONT() - application.showFontChooser()
+
+
+Shows the Font Chooser Dialog.
+
+ 
+VFP code example
+? GETFONT()         && returns the chosen font i.e.: Arial,12,B  
+
+ 
+Servoy code example
+// 0=Regular, 1=Bold, 2=Italic, 3=BoldItalic
+application.showFontChooser();  // returns a font i.e.: Book Antiqua,0,11
+
+// alternatively:
+
+globals.GETFONT(); 

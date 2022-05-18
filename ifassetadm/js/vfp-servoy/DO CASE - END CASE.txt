@@ -1,0 +1,104 @@
+ Code Reference - DO CASE...ENDCASE / switch
+
+
+The switch statement is one of the flow control programming constructs I am not so happy with. The DO CASE..ENDCASE is simpler and easier to use. But that's not all:
+
+ 
+WATCH OUT! The main difference between the DO CASE...ENDCASE and the switch is that the DO CASE...ENDCASE only executes the first match. The switch executes all branches below the first match unless a break; is included, EVEN IF THEY DON'T MATCH!? BRR. By the way, this is not Servoy's fault, various other programming languages handle this the same.
+
+ 
+Visual Foxpro:
+
+ 
+Syntax:
+
+ 
+DO CASE
+CASE lExpression1
+   [Commands]
+[CASE lExpression2
+   [Commands]]
+   ...
+[CASE lExpressionN
+   [Commands]]
+[OTHERWISE
+   [Commands]]
+ENDCASE
+
+ 
+Sample
+
+ 
+LOCAL lnChoice as Integer
+lnChoice = MESSAGEBOX("Press a button",2)
+
+ 
+DO CASE
+CASE lnChoice = 3
+   MESSAGEBOX('You pressed the "Abort" button')
+CASE lnChoice = 4
+   MESSAGEBOX('You pressed the "Retry" button')
+CASE lnChoice = 5
+   MESSAGEBOX('You pressed the "Ignore" button')
+OTHERWISE
+   MESSAGEBOX('No button was pressed')
+ENDCASE
+
+ 
+
+ 
+
+ 
+
+ 
+Servoy:
+
+ 
+Syntax:
+
+ 
+switch( ### )
+{
+case:
+default:
+}
+
+ 
+Sample
+
+ 
+var choice = plugins.dialogs.showInfoDialog('Make a choice','Press a button','Yes', 'No', 'Maybe');
+
+ 
+switch(choice) {
+case 'Yes': {
+   plugins.dialogs.showInfoDialog('Answer','You pressed the "Yes" button');
+   break;
+}
+case 'No': {
+   plugins.dialogs.showInfoDialog('Answer','You pressed the "No" button');
+   break;
+}
+case 'Maybe': {
+   plugins.dialogs.showInfoDialog('Answer','You pressed the "Maybe" button');
+   break;
+}
+default: {
+   plugins.dialogs.showInfoDialog('Answer','You did not press a button');
+   break;
+}
+}
+
+ 
+
+ 
+Conclusion
+I think the DO CASE...ENDCASE is definitely much more elegant and easy to use than the switch. I could understand if it executed all matches but without the breaks pressing 'No' in the sample above results in the following dialogs:
+
+ 
+You pressed the "No" button
+You pressed the "Maybe" button
+You did not press a button
+
+ 
+I rest my CASE... 

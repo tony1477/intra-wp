@@ -1,0 +1,16 @@
+ CHR() - utils.getUnicodeCharacter()
+
+
+Returns the Unicode character associated with the specified number. In VFP the Ansi code character is used and in Servoy the Unicode character is used. Of course the latter is preferable.
+
+ 
+VFP code example
+CHR(100)         && returns d
+
+ 
+Servoy code example
+utils.getUnicodeCharacter(100); // return d
+
+// alternatively:
+
+globals.CHR(100); 

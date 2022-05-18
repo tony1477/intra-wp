@@ -1,0 +1,30 @@
+VFP code example
+
+Copy complete array
+DIMENSION aArray(4)
+aArray(1)="Jones"
+aArray(2)="Smith"
+aArray(3)="Peter"
+aArray(4)="John"
+
+DIMENSION aTest(4)    && The array needs to be declared before copying
+ACOPY(aArray, aTest)  && copies array aArray to aTest
+
+Copy array partially
+
+DIMENSION aTest(2)    && The array needs to be declared before copying
+ACOPY(aArray, aTest, 2, 2)  && start copy at element 2 and copy 2
+                            && copies Smith and Peter
+
+ 
+Servoy code example
+
+Copy complete array
+var aArray = ["Jones", "Smith", "Peter", "John"];
+var aTest = aArray    // copies array aArray to aTest
+
+Copy array partially
+var aTest = aArray.slice(1,3)  // start copy at element 1 and end at 3
+aTest[0]                       // outputs Smith
+aTest[1]                       // outputs Peter
+aTest[2]                       // not there

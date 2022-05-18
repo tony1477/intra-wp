@@ -1,0 +1,19 @@
+ LEN() - string.length
+
+
+Determines the number of characters in a character expression, indicating the length of the expression.
+
+ 
+VFP code example
+nLength1 = LEN("Hello World") && count the number of characters (11)
+
+nLength2 = LEN(ALLTRIM(customers.lastname))
+
+ 
+Servoy code example
+var cString = "Hello World"
+var nLength1 = cString.length // count the number of characters
+
+// gets the length of the customername from the
+// customer field after trimming the spaces
+var nLength2 = utils.stringTrim(lastname).length

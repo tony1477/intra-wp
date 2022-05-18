@@ -1,0 +1,12 @@
+ ATAN() - Math.atan()
+
+
+Returns in radians the arc tangent of a numeric expression.
+
+ 
+VFP code example
+? ATAN(PI()/2)               && 1.003884821853887
+
+ 
+Servoy code example
+Math.atan(Math.PI/2)         // 1.0038848218538872

@@ -1,0 +1,18 @@
+ PROPER() - utils.stringInitCap()
+
+
+Returns from a character expression a string where each word is capitalized.
+
+ 
+VFP code example
+
+? PROPER("what's in a name?") && returns:     What's In A Name?
+
+ 
+Servoy code example
+
+utils.stringInitCap("what's in a name?");  // What's In A Name?
+
+// alternatively:
+
+globals.PROPER("what's in a name?");       // What's In A Name?

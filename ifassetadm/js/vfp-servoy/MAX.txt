@@ -1,0 +1,17 @@
+ MAX() - globals.MAX()
+
+
+Evaluates a set of expressions and returns the expression with the maximum value.
+
+ 
+VFP code example
+? MAX(23, 8, 79, 56)                   // Returns 79
+? MAX("a", "z", "q")                   // Returns z
+? MAX(DATE(2010,2,2), DATE(2011,1,1)   // Returns Jan 1 2011  
+ 
+
+ 
+Servoy code example
+globals.MAX(23, 8, 79, 56);            // returns 79
+globals.MAX("a", "z", "q");            // returns z
+globals.MAX(new Date(2010,1,2), new Date(2011,0,1)); // returns Jan 1 2011

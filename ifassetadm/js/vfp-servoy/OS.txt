@@ -1,0 +1,12 @@
+ OS() - application.getOSName()
+
+
+Returns the name and version number of the operating system under which the application is running.
+
+ 
+VFP code example
+? OS()  && returns Windows 6.01 under Windows 7 ;-)
+
+ 
+Servoy code example
+application.getOSName();

@@ -1,0 +1,14 @@
+ GO TOP - controller.setSelectedIndex(1);
+
+
+Makes the first record of the foundset the active record (selected record).
+
+ 
+VFP code example
+// go to the first record
+USE Customers
+GO TOP
+
+ 
+Servoy code example
+controller.setSelectedIndex(1);

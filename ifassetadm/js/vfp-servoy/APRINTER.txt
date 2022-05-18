@@ -1,0 +1,18 @@
+VFP code example
+? APRINTERS(aTest, "c:\temp\")   && fills five-column array
+
+? aTest(1,1) && printername
+? aTest(1,2) && name of the printerport
+? aTest(1,3) && name of the printerdriver
+? aTest(1,4) && printer comment
+? aTest(1,5) && printer location
+
+ 
+Servoy code example
+// returns array with printer names
+var prnArray = application.getPrinters();
+
+// alternatively:
+
+// returns array with printer names
+globals.APRINTERS();         

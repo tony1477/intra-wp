@@ -1,0 +1,22 @@
+ FOR EACH ... ENDFOR - array.ForEach()
+
+
+Executes a set of commands for each element in an array.
+
+ 
+VFP code example
+Dimension myArray(3)
+myArray(1)="a"
+myArray(2)="b"
+myArray(3)="c"
+
+For Each myVar in myArray
+   ? myVar
+EndFor
+
+ 
+Servoy code example
+function printAll(params) { application.output(params);}
+
+var a = ['a', 'b', 'c'];
+a.forEach(printAll);

@@ -1,0 +1,13 @@
+ HOME() - plugins.file.getHomeDirectory()
+
+
+Returns the home directory of the user that is currently logged in. IN VFP the HOME() function supports a parameter that allows you to differentiate between various Visual FoxPro directories. In Servoy only the users home directory is supported.
+
+ 
+VFP code example
+// returns C:\Users\Computername\Documents\Visual FoxPro Projects
+? HOME(8)
+
+ 
+Servoy code example
+plugins.file.getHomeDirectory();  \\ returns C:\Users\Computername\

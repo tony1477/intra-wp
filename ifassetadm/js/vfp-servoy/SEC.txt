@@ -1,0 +1,18 @@
+ SEC() - date.getSeconds()
+
+
+Returns the seconds portion from a datetime expression.
+
+ 
+VFP code example
+? SEC(DATETIME())                      // Returns a value between 0 and 59
+
+ 
+Servoy code example
+var d = new Date()           
+application.output(d.getSeconds())     // Returns a value between 0 and 59
+
+// OR using the SEC() function alternative:
+
+var d = new Date()             
+application.output(globals.SEC(d))     // Returns a value between 0 and 59

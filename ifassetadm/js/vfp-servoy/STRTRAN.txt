@@ -1,0 +1,24 @@
+ STRTRAN() - utils.stringReplace()
+
+
+Searches a character expression for a second character expression and replaces each occurrence with a third character expression.
+
+ 
+VFP code example
+
+? STRTRAN("Hello World", "Hello", "Servoy")  && returns Servoy World
+
+ 
+Servoy code example
+
+var cString = utils.stringReplace("Hello World", "Hello", "Servoy");
+application.output(cString);  
+
+// outputs  Servoy World
+
+
+NOTE! There is also a string.replace() function but if you use this the way you are used to it will only replace the first occurrence of the searchstring! This is because it expects a regular expression instead of a string as a first parameter!
+
+We don't have regular expressions in Visual FoxPro but they are very powerful and you will benefit greatly if you learn how to use them!
+
+Here's a quick tutorial on how to use regular expressions and here are some examples. 

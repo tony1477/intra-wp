@@ -1,0 +1,25 @@
+ FILE() | plugins.File
+
+
+Determines if the specified file exists. Also the nFlags parameter can be used to differentiate in behaviour between normal files and hidden files.
+
+ 
+VFP code example
+? FILE("c:\temp\test.xml")   && .T. if the file exists and is not hidden
+? FILE("c:\temp\test.xml",0) && .T. if the file exists and is not hidden
+? FILE("c:\temp\test.xml",1) && .F. if the file exists and is hidden
+ 
+
+ 
+Servoy code example
+var fs = plugins.file.convertToJSFile("c:\\temp\\test.xml");
+// true if file exists
+fs.exists();
+// true if file is hidden
+fs.isHidden();
+
+// alternatively:
+
+globals.FILE("c:\\temp\\test.xml");    // true if exists and not hidden
+globals.FILE("c:\\temp\\test.xml",0);  // true if exists and not hidden
+globals.FILE("c:\\temp\\test.xml",1);  // false if exists and is hidden 

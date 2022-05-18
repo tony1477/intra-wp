@@ -1,0 +1,15 @@
+ CEILING() - Math.ceil()
+
+
+Returns the next highest integer that is greater than or equal to the specified numeric expression.
+
+ 
+VFP code example
+amount = 2.33
+? CEILING(amount)            // Returns 3
+ 
+
+ 
+Servoy code example
+var amount = 2.33;             
+globals.CEILING(amount);    // returns 3.0

@@ -1,0 +1,18 @@
+ MINUTE() - date.getMinutes()
+
+
+Returns the minute portion from a datetime expression.
+
+ 
+VFP code example
+? MINUTE(DATETIME())                   // Returns a value between 0 and 59
+
+ 
+Servoy code example
+var d = new Date()           
+application.output(d.getMinutes())     // Returns a value between 0 and 59
+
+// OR using the MINUTE() function alternative:
+
+var d = new Date()             
+application.output(globals.MINUTE(d))  // Returns a value between 0 and 59 

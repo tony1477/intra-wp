@@ -1,0 +1,15 @@
+ RAT() - string.lastIndexOf()
+
+
+Returns the numeric position of the last (rightmost) occurrence of a character string within another character string. In Servoy the string starts at position 0!
+ 
+VFP code example
+
+? RAT("o", "Hello World")  && returns 8
+
+ 
+Servoy code example
+
+var cString = "Hello World";
+application.output(cString.lastIndexOf("o"))  
+// outputs  7 !!

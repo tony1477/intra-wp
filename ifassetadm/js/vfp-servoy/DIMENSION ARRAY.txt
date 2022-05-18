@@ -1,0 +1,64 @@
+ Dimension - new Array()
+
+
+Creates an array of variables.
+
+ 
+VFP code example
+Array with two elements
+DIMENSION myArray(2)
+myArray(1) = "a"
+myArray(2) = "b"
+
+Two dimensional array (2 rows, three columns)
+DIMENSION myArray(2,3)
+myArray(1,1) = "a"
+myArray(1,2) = .T.
+myArray(1,3) = "c"
+myArray(2,1) = 18
+myArray(2,2) = "hello"
+myArray(2,3) = DATE()
+
+Object array
+
+DIMENSION MyArray[5]
+FOR x = 1 TO 5
+   MyArray[x] = CREATEOBJECT("CommandButton")
+ENDFOR
+
+
+ 
+
+ 
+WATCH OUT! Arrays are zero-based in Servoy! See the samples.
+
+ 
+
+ 
+Servoy code example
+Empty array
+var myArray = new Array();
+ 
+Short array declaration for two elements
+var myArray = ['a', 'b'];
+
+Array with a specified number of elements
+var myArray = new Array(2);
+myArray[0] = 'a';  //normal braces () don't work!
+myArray[1] = 'b';  //elements are zero-based
+
+Shorter version of the same array
+var myArray = new Array('a', 'b');
+
+Two-dimensional array
+Sorry, no can do (or I didn't find out how)
+ 
+Named array elements
+var myCustomer = new Array();
+myCustomer['firstname'] = "John";
+myCustomer['lastname'] = "Smith";
+
+
+ 
+Conclusion
+I can live with these changes. Pitty: no multi-dimensional arrays. Cool: named array elements. 

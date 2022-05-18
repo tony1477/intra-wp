@@ -1,0 +1,18 @@
+ ERASE - plugins.file.deleteFile()
+
+
+Deletes a file from disk.
+
+ 
+VFP code example
+ERASE "c:\temp\test.xml"            && delete the specified file
+ERASE "c:\temp\test.xml" RECYCLE    && move to the windows recycle bin  
+
+ 
+Servoy code example
+plugins.file.deleteFile("c:\\temp\\test.xml");
+
+// alternatively:
+
+globals.ERASE("c:\\temp\\test.xml"); 
+globals.DELETE_FILE("c:\\temp\\test.xml"); 

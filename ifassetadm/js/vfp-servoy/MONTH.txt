@@ -1,0 +1,19 @@
+ MONTH() - date.getMonth()
+
+
+Returns the number of the month for a given Date or DateTime expression.
+
+ 
+VFP code example
+month = MONTH(DATE())       && 1=January, 2=February etc.
+
+ 
+Servoy code example
+var d = new Date();
+var month = d.getMonth();   // 0=January, 1=February etc.
+
+Note: Alternatively use the MONTH() function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+Aargh, I think I will never get used to those zero-based indexes. I wonder how often people who are used to this get this mixed up. 

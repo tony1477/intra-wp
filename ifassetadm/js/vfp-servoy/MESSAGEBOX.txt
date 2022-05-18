@@ -1,0 +1,107 @@
+ Code Reference - Messagebox()
+
+
+The Messagebox function in VFP is well known and easy to use. The Servoy counterpart is not all that different and even more userfriendly and powerful. Nevertheless the MESSAGEBOX() function has been added to the VFP2Servoy Toolkit for your convenience.
+It works the same as in VFP (except there is no timeout support) and it returns the button caption instead of a number wich I find more convenient. If you want it exactly the same it's a small change to make.
+
+ 
+Visual Foxpro:
+
+ 
+Syntax:
+
+ 
+MESSAGEBOX(eMessagetext,[nDialogBoxType][,cTitleBarText][,nTimeout])
+
+Sample 1
+
+ 
+MESSAGEBOX("Hello World", 64)
+
+ 
+Sample 2
+
+ 
+MESSAGEBOX("Please try again", 48)
+
+ 
+Sample 3
+
+ 
+MESSAGEBOX("An error has occurred, the system will shut down now.",16)
+
+ 
+Sample 4
+
+ 
+IF MESSAGEBOX("Are you sure you want to exit the application?",36)=6
+   QUIT
+ENDIF
+
+ 
+
+ 
+
+ 
+Servoy:
+
+ 
+Syntax:
+
+ 
+showInfoDialog(dialog_title, msg, [button1], [button2], [buttonN]);
+
+Sample 1
+
+ 
+plugins.dialogs.showInfoDialog("Servoy", "Hello World!");
+
+ 
+
+ 
+Sample 2
+
+ 
+plugins.dialogs.showWarningDialog("Servoy","Please try again");
+
+ 
+
+ 
+Sample 3
+
+ 
+plugins.dialogs.showErrorDialog("Servoy","An error has occurred, the system will shut down now");
+
+ 
+
+ 
+Sample 4
+
+ 
+var buttonChoice = plugins.dialogs.showQuestionDialog("Servoy","Are you sure you want to exit the application?","Yes", "No");
+
+if (buttonChoice == "Yes")
+{
+application.exit();
+}
+
+ 
+
+ 
+
+Note: MESSAGEBOX() is a function of the VFP2Servoy Toolkit
+
+ 
+
+ 
+Summarizing
+If you have trouble remembering the syntax then locate the plugins node in the Solution Explorer and expand it. Click on the dialogs node and the List View window will show the available dialogs:
+
+ 
+
+ 
+Also note that when you start typing plugins.dialog and select a dialog from the intellisense and press Enter, the syntax will be completed and you can replace the placeholders with your own code:
+
+ 
+
+ 

@@ -1,0 +1,18 @@
+ MIN() - globals.MIN()
+
+
+Evaluates a set of expressions and returns the expression with the minimum value.
+
+ 
+VFP code example
+? MIN(23, 8, 79, 56)                   // Returns 8
+? MIN("a", "z", "q")                   // Returns a
+? MIN(DATE(2010,2,2), DATE(2011,1,1)   // Returns Feb 2 2010  
+ 
+
+ 
+Servoy code example
+globals.MIN(23, 8, 79, 56);            // returns 8
+globals.MIN("a", "z", "q");            // returns a
+globals.MIN(new Date(2010,1,2), new Date(2011,0,1)); // returns Feb 2 2010
+

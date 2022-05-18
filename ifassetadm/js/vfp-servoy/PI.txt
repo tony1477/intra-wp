@@ -1,0 +1,16 @@
+ PI() - Math.PI
+
+
+Returns the numeric constant pi.
+
+ 
+VFP code example
+? PI()
+
+** result: 3.141592653589793 (depending on set decimals)
+
+ 
+Servoy code example
+Math.PI // PI is a constant and not a function as in VFP
+
+// result: 3.141592653589793

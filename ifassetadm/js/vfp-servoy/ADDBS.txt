@@ -1,0 +1,14 @@
+VFP code example
+*-- Both print C:\Windows\
+
+? ADDBS( "C:\Windows" )
+
+? ADDBS( "C:\Windows\" )
+
+ 
+Servoy code example
+// Both print C:\Windows\
+
+globals.ADDBS("C:\Windows")
+
+globals.ADDBS("C:\Windows\")

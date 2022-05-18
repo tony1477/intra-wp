@@ -1,0 +1,16 @@
+ MD | MKDIR - plugins.file.createFolder()
+
+
+Creates a new directory or subdirectory on disk.
+
+ 
+VFP code example
+MD "c:\temp\sub1\sub2" && create subfolder  
+
+ 
+Servoy code example
+plugins.file.createFolder("c:\\temp\\sub1\\sub2");
+
+// alternatively:
+
+globals.MD("c:\\temp\\sub1\\sub2"); 

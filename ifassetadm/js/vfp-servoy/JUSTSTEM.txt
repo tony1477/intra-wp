@@ -1,0 +1,14 @@
+ JUSTSTEM() - globals.JUSTSTEM()
+
+
+Returns the stem name (the file name before the extension) from a complete path and file name.
+
+ 
+VFP code example
+
+? JUSTSTEM("c:\test\Document1.doc")  && returns: Document1
+
+ 
+Servoy code example
+
+globals.JUSTSTEM("c:\\test\\Document1.doc"); / returns: Document1 

@@ -1,0 +1,26 @@
+ DTOC() - globals.DTOC()
+
+
+Returns a date-string from a Date expression. DTOC is short for Date-To-Character.
+
+ 
+VFP code example
+? DTOC(DATE())     // "4/15/2011" or "15-4-2011" depending on locale
+? DTOC(DATE(),1)   // "20110415"  suitable for indexing
+
+INDEX ON DTOC(dInvDate, 1) TAG dateIndex
+
+ 
+Servoy code example
+// March 4, 2011 / vrijdag 4 maart 2011 (depending on locale)
+var d = new Date();
+application.output(d.toLocaleDateString);
+
+globals.DTOC(new Date())    // "4/15/2011" or "15-4-2011" (localized)
+globals.DTOC(new Date(),1)  // "20110415"  suitable for indexing
+
+Note: DTOC() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+If you need a date-string in the users locale you can use d.toLocaleDateString but if you are converting a Visual FoxPro application to Servoy and want to show the user the same date format he is used to then use the globals.DTOC() function. 

@@ -1,0 +1,26 @@
+ DO FORM - application.createNewFormInstance()
+
+
+Create a new form instance. STOP! Before you run off to start initializing forms you should know that you usually don't have to create a new form instance. By default all forms are initialized and available through the Windows menu when the application is started.
+
+So how do we activate a form then if it is allready initialized? Use application.ShowForm() instead. See the code below for an example.
+
+ 
+VFP code example
+ DO FORM frmTest
+
+ 
+Servoy code example
+// activate a form that has been initialized at application startup
+// which is the default behaviour for all forms
+application.showForm(forms.frmTest);
+
+// If you want to instantiate an extra instance of a form then use
+// application.createNewFormInstance()
+application.createNewFormInstance("frmTest", "ofrmTest2");
+
+// How about a modal dialog popup style form? Also check out the other
+// JSWindow types
+var win = application.createWindow("frmCustomers", JSWindow.MODAL_DIALOG); win.show("frmCustomers");
+// And in the dialog close the form with the code or use the close box
+controller.getWindow().destroy();

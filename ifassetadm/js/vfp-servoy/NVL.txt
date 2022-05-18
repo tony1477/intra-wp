@@ -1,0 +1,22 @@
+ NVL() - globals.NVL()
+
+
+Returns a non-null value from two expressions.
+
+ 
+VFP code example
+eVar1 = .NULL.
+eVar2 = 16
+? NVL(eVar1, eVar2)       && Outputs 16
+
+ 
+Servoy code examplee
+var eVar1 = null;
+var eVar2 = 16;
+application.output(globals.NVL(eVar1, eVar2))  // Outputs 16
+
+Note: NVL() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+When you look at the code of the NVL() function in the VFP2Servoy Toolkit you see that there is no easy way to do this in Servoy (or we haven't found it yet) so here using the function instead of the Servoy syntax saves time.  

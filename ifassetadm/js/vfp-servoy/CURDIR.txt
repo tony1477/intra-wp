@@ -1,0 +1,20 @@
+ CURDIR() - plugins.file.getHomeDirectory()
+
+
+Returns the current directory.
+
+ 
+VFP code example
+
+? CURDIR() && returns: \PROGRAM FILES (X86)\MICROSOFT VISUAL FOXPRO 9\
+? FULLPATH(CURDIR()) && returns: "C:\PROGRAM FILES..."
+
+
+ 
+Servoy code example
+
+plugins.file.getHomeDirectory();  // returns: C:\Users\<Computername>
+
+//alternatively:
+
+globals.CURDIR();                 // returns: C:\Users\<Computername>

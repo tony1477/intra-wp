@@ -1,0 +1,18 @@
+ ^ | ** - Math.pow()
+
+
+Returns base to the exponent power.
+
+ 
+VFP code example
+? 3 ^ 8                           && Returns 6561
+? 3 ** 8                          && Returns 6561
+
+ 
+Servoy code example
+            
+Math.pow(3,8);                    // returns 6561.0
+
+// or alternatively:
+
+globals.POWER(3, 8)               // returns 6561.0

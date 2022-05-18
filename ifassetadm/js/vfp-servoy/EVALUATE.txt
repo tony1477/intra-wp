@@ -1,0 +1,29 @@
+ EVALUATE() - eval()
+
+
+Evaluates a character expression and returns the result.
+
+Note! Be careful eval() might produce unexpected results! Also, combined with user input, eval() potentially forms a security risk. When evaluating variables inside a function they might be out of scope. Servoy says: eval()==evil. Use with caution.
+
+ 
+VFP code example
+cText = "ABS(-3.45)" 
+nResult = EVALUATE(cText)
+? nResult                    && returns 3.45
+
+ 
+Servoy code example
+var cText = "Math.abs(-3.45)";
+var nResult = eval(cText);
+application.output(nResult);         // returns 3.45
+
+// alternatively:
+
+globals.EVALUATE("Math.abs(-3.45)"); // returns 3.45
+
+
+Note: EVALUATE() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+In VFP EVALUATE() works just fine although it may form a security risk if it is combined with user input (i.e: EVALUATE("DELETE ALL")). 

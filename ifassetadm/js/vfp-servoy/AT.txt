@@ -1,0 +1,19 @@
+ AT() - string.indexOf()
+
+
+Searches a character expression for the occurrence of another character expression and returns the position where the string was found. In Servoy the position is zero-based, the first character is at position 0, for VFP this is position 1. If the searchString was not found then VFP returns a 0 and Servoy returns -1. This is important to remember.
+
+ 
+VFP code example
+
+? AT("World", "Hello World")  && returns 7
+
+? AT("Hi", "Hello World") && returns 0
+
+ 
+Servoy code example
+
+var cString = "Hello World";
+application.output(cString.indexOf("World"))  // outputs  6 !!
+
+application.output(cString.indexOf("Hi"))     // outputs -1 !!

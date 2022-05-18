@@ -1,0 +1,6 @@
+VFP code example
+? ACOS(0.5)             && 1.0471975511965980
+
+ 
+Servoy code example
+Math.acos(0.5)          // 1.0471975511965979

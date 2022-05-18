@@ -1,0 +1,23 @@
+ VAL() - utils.stringToNumber()
+
+
+Returns a numeric value from a character expression composed of numbers.
+
+ 
+VFP code example
+
+? VAL("34.56") && returns: 34.56
+
+ 
+Servoy code example
+
+utils.stringToNumber("34.56") // returns: 34.56
+
+// but watch out!
+
+utils.stringToNumber("-34.56") // returns: 34.56 too!!
+
+
+// alternatively:
+
+globals.VAL("34.56");         // returns: 34.56

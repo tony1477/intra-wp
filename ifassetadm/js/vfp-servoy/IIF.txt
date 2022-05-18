@@ -1,0 +1,17 @@
+ IIF() - if..else
+
+
+Returns one of two values depending on the value of a logical expression. Although Javascript does not have an immediate if statement it is possible to achieve the same effect by writing an if..else on one line.
+
+ 
+VFP code example
+? IIF(i = 7, "Value of i is 7", "Value of i is NOT 7")
+
+ 
+Servoy code exampleple
+if(i==7){cString="Value of i is 7"}else{cString="Value of i is NOT 7"}
+application.output(cString)
+
+// alternatively:
+
+var cString=globals.IIF(i==7, "Value of i is 7", "Value of i is NOT 7");

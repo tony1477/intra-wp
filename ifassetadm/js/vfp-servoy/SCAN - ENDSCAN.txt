@@ -1,0 +1,22 @@
+ SCAN...ENDSCAN() - while()
+
+
+Moves the record pointer through the currently selected table and executes a block of commands for each record that meets the specified conditions. This is where a lot of VFP programmers will have a hard time to let go of what they are used to: opening and selecting tables and modifying data very easily. As you may now know, Servoy has a one-table-per-form concept so approaching data is somewhat different. For large data manipulation operations you may want to send an update command directly to the database.
+
+ 
+VFP code example
+USE customers
+
+SCAN
+   REPLACE city WITH UPPER(city)
+ENDSCAN
+
+ 
+Servoy code example
+var i = 1;
+var _rec;
+while (i <= foundset.getSize()) {     // don't do this for > 1000 rows
+   _rec = foundset.getRecord(i);
+   _rec.city = _rec.city.toUpperCase();
+   i = i + 1;
+}

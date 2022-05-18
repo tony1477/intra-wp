@@ -1,0 +1,28 @@
+VFP code example
+cText = _CLIPTEXT && gets the clipboard contents and puts them in a string
+_CLIPTEXT = "Hello" && places a string on the clipboard
+
+ 
+Servoy code example
+var cText = application.getClipboardString();  // retrieves the clipboard
+application.setClipboardContent("Hello");      // sets the clipboard
+
+// alternatively:
+
+var cText = globals._CLIPTEXT();               // retrieves the clipboard
+globals._CLIPTEXT("Hello");                    // sets the clipboard
+
+
+
+VFP code example
+nResult = (10-20)
+? ABS(nResult)
+
+** result: 10
+
+ 
+Servoy code example
+var nResult = (10-20);
+Math.abs(nResult);
+
+// result: 10.0

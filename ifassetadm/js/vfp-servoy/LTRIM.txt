@@ -1,0 +1,14 @@
+ LTRIM() - globals.LTRIM()
+
+
+Removes all leading spaces from the specified character expression. For ALLTRIM() the utils.stringTrim() alternative is available but for the LTRIM there is none.
+
+ 
+VFP code example
+
+? LTRIM("   hello") && returns: "hello"
+
+ 
+Servoy code example
+
+globals.LTRIM("   hello");  // returns: "hello"

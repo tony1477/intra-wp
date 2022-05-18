@@ -1,0 +1,20 @@
+ PADR() - globals.PADR()
+
+
+Returns a string with the length of nLength padded with cPadChar on the right.
+
+ 
+VFP code example
+myVar = "23"
+? PADR(myVar,5,"#")       && Outputs 23###
+
+ 
+Servoy code example
+var myVar = "23";
+application.output(globals.PADR(myVar,5,"#"))  // Outputs 23###
+
+Note: PADR() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+When you look at the code of the PADR function in the VFP2Servoy Toolkit you see that there is no easy way to do this in Servoy (or we haven't found it yet) so here using the function instead of the Servoy syntax saves time.  

@@ -1,0 +1,25 @@
+ $ - globals.CONTAINS()
+
+
+Returns true if a character expression is contained in another character expression.
+
+ 
+VFP code example
+? "b" $ "abc"                          && returns .T.
+? "World" $ "Hello World"              && returns .T.
+? "world" $ "Hello World"              && returns .F.
+
+ 
+Servoy code example
+var cSearchFor = "World";
+var cString = "Hello World";
+if(cString.IndexOf>-1) {
+   return true;                             // returns true
+}else{
+   return false;
+}
+
+// alternatively:
+
+globals.CONTAINS("World","Hello World!");   // returns true
+

@@ -1,0 +1,12 @@
+ ASIN() - Math.atan()
+
+
+Returns in radians the arc sine of a numeric expression.
+
+ 
+VFP code example
+? ASIN(0.65)             && -0.7075844367253560
+
+ 
+Servoy code example
+Math.asin(-0.65)         // -0.707584
