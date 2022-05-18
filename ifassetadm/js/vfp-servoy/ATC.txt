@@ -1,0 +1,26 @@
+ ATC() - string.toLowerCase().indexOf()
+
+
+Searches a character expression for the occurrence of another character expression and returns the position where the string was found, without regard for the case of these two expressions. In Servoy the position is zero-based, the first character is at position 0, for VFP this is position 1. If the searchString was not found then VFP returns a 0 and Servoy returns -1. This is important to remember.
+
+ 
+
+Because Servoy/Javascript does not have a direct counterpart for ATC() (or I missed it), the same effect can be realised by using the code below. However, this requires the search expression to be entered in lower case.
+
+ 
+VFP code example
+
+? ATC("world", "Hello World")  && returns 7
+
+? ATC("Hi", "Hello World") && returns 0
+
+ 
+Servoy code example
+
+var cString = "Hello World";
+application.output(cString.toLowerCase().indexOf("world"))  
+// outputs  6 !!
+
+application.output(cString.toLowerCase().indexOf("Hi"))    
+// outputs -1 !!
+

@@ -1,0 +1,19 @@
+ MOD() | % - %
+
+
+Divides one numeric expression by another numeric expression and returns the remainder.
+
+ 
+VFP code example
+? 11 % 3                   && returns 2
+? MOD(11,3)                && returns 2
+ 
+
+ 
+Servoy code example
+11 % 3;                    // returns 2
+
+// alternatively:
+
+globals.MOD(11,3);         // returns 2
+

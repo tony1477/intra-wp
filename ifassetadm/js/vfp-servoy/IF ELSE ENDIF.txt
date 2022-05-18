@@ -1,0 +1,105 @@
+ Code Reference - if-else
+
+
+The if statement is probably one of the very first statements you will be looking for since it's so commonly used in any programming language.
+
+ 
+Visual Foxpro:
+
+ 
+Syntax:
+
+ 
+IF lExpression [THEN]
+   Commands
+[ELSE
+   Commands]
+ENDIF
+
+ 
+Sample 1
+
+ 
+IF var < 5
+   var = var + 1
+ENDIF
+
+ 
+Sample 2
+
+ 
+IF var < 5
+   var = var + 1
+ELSE
+   var = var - 1
+ENDIF
+
+ 
+
+ 
+
+ 
+Servoy:
+
+ 
+Syntax:
+
+ 
+if (lExpression)
+{
+   Commands;
+}
+[else
+{
+   Commands;
+}]
+
+ 
+Sample 1
+
+ 
+if (var < 5)
+{
+   var = var + 1;
+}
+
+ 
+Sample 2
+
+ 
+if (var < 5)
+{
+   var = var + 1;
+}
+else
+{
+   var = var - 1;
+}
+
+ 
+Sample 3
+
+ 
+if (x < y)
+   return -1;
+else if (x == y)
+   return 0;
+else
+   return 1;
+
+ 
+
+ 
+Conclusion
+Not that different right? Except for maybe the last sample but that is actually a nested if. You can leave out the braces but then you can use only one command. I would recommend always using braces for sake of clarity. Otherwise when you add a command you might forget the braces.
+
+ 
+Also don't forget that comparing values should always be done with == and not with the single equal sign. Why? Because the code below assigns a 3 to the variable x ...
+
+ 
+if (x = 3)
+{
+   return
+}
+
+ 

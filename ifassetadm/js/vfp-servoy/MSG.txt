@@ -1,0 +1,10 @@
+ msg() - plugins.dialogs.showInfoDialog()
+
+
+Simplified MESSAGEBOX() function. When using plugins.dialogs.showInfoDialog() or globals.MESSAGEBOX() there are quite a lot of options you can fill and code you need to type. If you just want to show a quick informative message with no other options then this is the fastest way. B.t.w. this is not an existing VFP function which is why it is not capitalized.
+
+ 
+Servoy code example
+
+globals.msg("Hello World!");   // quick message
+

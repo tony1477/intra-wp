@@ -1,0 +1,18 @@
+ CTOD() - globals.CTOD()
+
+
+Converts a character expression to a date expression.
+
+ 
+VFP code example
+
+? CTOD("13-01-2011") && returns: 13-1-2011 as date
+
+ 
+Servoy code example
+
+globals.CTOD("01/13/2011");         // returns: 01/13/2011 as datetime
+globals.CTOD("13-01-2011");         // returns: 01/13/2011 as datetime
+
+
+Note: CTOD() is a function of the VFP2Servoy Toolkit 

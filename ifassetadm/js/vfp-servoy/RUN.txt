@@ -1,0 +1,20 @@
+ RUN - application.executeProgram() | application.executeProgramInBackGround()
+
+
+Executes external programs.
+
+ 
+VFP code example
+RUN c:\windows\system32\calc.exe && start windows calculator
+RUN /N c:\windows\system32\calc.exe && start windows calculator NOWAIT
+
+ 
+Servoy code example
+var cResult=application.executeProgram("c:\\windows\\system32\\calc.exe");
+application.executeProgramInBackground("c:\\windows\\system32\\calc.exe");
+ 
+// alternatively:
+
+var cResult=globals.RUN("c:\\windows\\system32\\calc.exe");
+globals.RUN("c:\\windows\\system32\\calc.exe", true);
+

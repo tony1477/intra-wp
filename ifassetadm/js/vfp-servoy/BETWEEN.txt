@@ -1,0 +1,33 @@
+ BETWEEN() - globals.BETWEEN()
+
+
+Determines whether the value of an expression is inclusively between the values of two expressions of the same type.
+
+ 
+VFP code example
+? BETWEEN("b", "a", "c")          && Outputs .T.
+? BETWEEN("a", "b", "c")          && Outputs .F.
+? BETWEEN("a", .NULL., "c")       && Outputs .NULL.
+? BETWEEN("3", "1", "5")          && Outputs .T.
+? BETWEEN(3, 1, 5)                && Outputs .T.
+? BETWEEN(2, 1, 2)                && Outputs .T.
+
+d1=DATE(2011,2,15)            
+d2=DATE(2011,1,1)            
+d3=DATE(2011,3,1)            
+
+? BETWEEN(d1, d2, d3)             && Outputs .T.
+
+ 
+Servoy code example
+globals.BETWEEN("b", "a", "c");   // true
+globals.BETWEEN("a", "b", "c");   // false
+globals.BETWEEN("3", "1", "5");   // true
+globals.BETWEEN(3, 1, 5);         // true
+globals.BETWEEN(3, null, 5);      // null
+globals.BETWEEN(2, 1, 2);         // true
+
+var d1 = new Date(2011,2,1);
+var d2 = new Date(2011,1,1);
+var d3 = new Date(2011,3,1);
+globals.BETWEEN(d1, d2, d3);      // true

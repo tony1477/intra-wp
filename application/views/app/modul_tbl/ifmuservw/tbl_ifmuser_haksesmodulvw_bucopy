@@ -1,0 +1,65 @@
+<div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <?php echo alertbox('alert-info', 'Perhatian', 'Silahkan Cheklist Pada Menu Yang Akan Diberikan Akses') ?>
+                <div class="box box-warning box-solid">
+
+                    <div class="box-header">
+                        <h3 class="box-title">Hak Akses Dokumen User :  <b><?php echo ucwords($arrusertemp['user_nama']) ?></b></h3>
+                    </div>
+
+                    <div class="box-body">
+                        <div style="padding-bottom: 10px;">
+                            <table class="table table-bordered table-striped" id="mytable">
+                                <thead>
+                                    <tr>
+                                        <th width="30px">No</th>
+                                        <th>Nama Modul</th>
+                                        <th width="100px">Pilih Akses</th>
+                                    </tr>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($armodultemp as $mdl) {
+                                        echo "<tr>
+                                                <td>$no</td>
+                                                <td>$mdl->dok_nmsop</td>
+                                                <!-- <td align='center'><input type='checkbox' ".  ifchecked_haksesmodul(rawurldecode($this->uri->segment(5)), $mdl->dok_nosop)." onClick='ifmodul_akses($mdl->dok_nosop)'></td> -->
+                                                <td align='center'><input type='checkbox' ".ifchecked_haksesmodul(rawurldecode($this->uri->segment(5)), $mdl->dok_nosop)."></td>
+                                              </tr>";
+                                              $no++;
+                                    }
+                                    ?>
+                                </thead>
+                                <!--<tr><td></td><td colspan="2">
+                                        <button type="submit" class="btn btn-danger btn-sm">Simpan Perubahan</button>
+                                    </td></tr>-->
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+
+
+<script type="text/javascript">
+    function ifmodul_akses(idnosop){
+        //alert(dok_nosop);
+        var idnosop = idnosop;
+        var iduser = '<?php echo rawurldecode($this->uri->segment(5)); ?>';
+        //alert(iduser);
+        $.ajax({
+            //url:"<?php echo base_url()?>index.php/userlevel/kasi_akses_ajax",
+            url:"<?php echo base_url()?>index.php/modul_tbl/ifmusercs/tbl_ifmusercs/ifhaksesmodulajax",
+            data:"idnosop=" + idnosop + "&iduser="+ iduser ,
+            success: function(html)
+            { 
+                //load();
+                //alert('sukses');
+            }
+        });
+    }    
+</script>
+

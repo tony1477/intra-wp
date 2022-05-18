@@ -1,0 +1,18 @@
+ ABS() - Math.abs()
+
+
+Returns the absolute value of the specified numeric expression.
+
+ 
+VFP code example
+nResult = (10-20)
+? ABS(nResult)
+
+** result: 10
+
+ 
+Servoy code example
+var nResult = (10-20);
+Math.abs(nResult);
+
+// result: 10.0

@@ -1,0 +1,17 @@
+ ? - application.output()
+
+
+Evaluates expressions and sends the results to output location (main screen in VFP or the Debug Console in Servoy).
+
+ 
+VFP code example
+? "Hello"
+
+** shows Hello in the Visual FoxPro background screen (_Screen)
+
+ 
+Servoy code example
+application.output("Hello") ;
+
+// shows Hello in the Debug Console
+// if you don't see it press Alt+Shift+Q, C

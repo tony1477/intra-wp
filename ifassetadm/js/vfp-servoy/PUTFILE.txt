@@ -1,0 +1,21 @@
+ PUTFILE() - plugins.file.showFileSaveDialog()
+
+
+Invokes the Save As dialog box and returns a JSFile object of the saved file.
+Note: The PUTFILE() function returns a JSFile object from which you can retrieve all the file properties and methods. This is more powerful than just returning a string with the foldername and path.
+
+ 
+VFP code example
+cFileName = PUTFILE("File:", "test.txt", ".txt") && invoke save as dialog
+
+ 
+Servoy code example
+// returns JSFile (see plugins.file.JSFile for list of props & functions)
+var cFile = plugins.file.showFileSaveDialog("test.txt", "Save file");
+cFile.getPath();     // c:\temp\test.txt
+ 
+// alternatively:
+
+// returns JSFile
+var cFile = globals.PUTFILE("test.txt", "Save file");
+cFile.getPath();     // c:\temp\test.txt

@@ -1,0 +1,28 @@
+ ISLOWER() - globals.ISLOWER()
+
+
+Determines whether the leftmost character of the specified character expression is a lowercase alphabetic character.
+
+ 
+VFP code example
+
+? ISLOWER('Abc')          && returns .F.
+? ISLOWER('abc')          && returns .T.
+? ISLOWER('9ab')          && returns .F.
+? ISLOWER('éb89')         && returns .T.
+? ISLOWER('_bcdef')       && returns .F.
+
+ 
+Servoy code example
+
+cString = "ábc";
+cString.charAt(0).match(/[^W0-9_]/)!=null &&
+    cFirstCharacter == cFirstCharacter.toLowerCase(); // returns true
+
+// alternatively
+
+globals.ISLOWER("Abc");      // Returns false
+globals.ISLOWER("abc");      // Returns true
+globals.ISLOWER("9ab");      // Returns false
+globals.ISLOWER("éb89");     // Returns true
+globals.ISLOWER("_bcdef");   // Returns false

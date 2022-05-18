@@ -1,0 +1,15 @@
+ EMPTY() - ==null
+
+
+Returns true if an expression evaluates to a null value; otherwise, ISNULL() returns false.
+
+ 
+VFP code example
+name = .NULL.
+? ISNULL(name)            // Returns .T.
+ 
+
+ 
+Servoy code example
+var name = null;             
+globals.ISNULL(name);      // returns true

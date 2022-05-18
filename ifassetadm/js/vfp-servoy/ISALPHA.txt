@@ -1,0 +1,24 @@
+ ISALPHA() - globals.ISALPHA()
+
+
+ISALPHA() returns true if the leftmost character in the specified character expression is an alphabetic character; otherwise ISALPHA() returns false.
+
+ 
+VFP code example
+
+? ISALPHA('Abc')          && returns .T.
+? ISALPHA('Äbc')          && returns .T.
+? ISALPHA('9')            && returns .F.
+? ISALPHA('9ab')          && returns .F.
+? ISALPHA('éb89')         && returns .T.
+? ISALPHA('_bcdef')       && returns .F.
+
+ 
+Servoy code example
+
+cString = "Äbc";
+cString.charAt(0).match(/[^W0-9_]/)!=null;
+
+// alternatively
+
+globals.ISALPHA("Äbc");   // Returns true

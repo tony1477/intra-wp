@@ -1,0 +1,35 @@
+ ASORT() - array.sort
+
+
+Sorts elements in an array.
+
+ 
+VFP code example
+DIMENSION aWords(6)
+aWords(1)= "limit"
+aWords(2)= "lines"
+aWords(3)= "finish"
+aWords(4)= "complete"
+aWords(5)= "In"
+aWords(6)= "Out"
+
+ASORT(aWords)
+
+? aWords(1) && returns In
+? aWords(2) && returns Out
+? aWords(3) && returns complete
+? aWords(4) && returns finish
+? aWords(5) && returns limit
+? aWords(6) && returns lines
+
+ 
+Servoy code example
+
+var words = new Array("limit","lines","finish","complete","In","Out"); words.sort();
+
+words[0];         // returns Inn
+words[1];         // returns Outt
+words[2];         // returns completee
+words[3];         // returns finishh
+words[4];         // returns limitt
+words[5];         // returns linee

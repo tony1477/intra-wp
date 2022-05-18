@@ -1,0 +1,18 @@
+ PARAMETERS() - arguments.length
+
+
+Returns the number of parameters passed to the current function/method.
+
+ 
+VFP code example
+
+? PARAMETERS()          && returns: number of parameters
+
+ 
+Servoy code example
+
+arguments.length
+
+// Alternatively:
+
+globals.PARAMETERS();   // returns: number of parameters 

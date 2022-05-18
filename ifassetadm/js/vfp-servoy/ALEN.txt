@@ -1,0 +1,14 @@
+VFP code example
+DIMENSION myArray(2,3)    && create an array of 2 rows and 3 columns
+? ALEN(myArray)           && returns 6 (2*3 elements)
+? ALEN(myArray,1)         && returns 2 (rows)
+? ALEN(myArray,2)         && returns 3 (columns)
+
+ 
+Servoy code example
+var myArray = new Array(2);        // array with 2 elements
+myArray = ['a', 'b']
+application.output(myArray[0])     // returns a  ZERO-BASED! 
+application.output(myArray[1])     // returns b
+
+application.output(myArray.length) // returns 2  

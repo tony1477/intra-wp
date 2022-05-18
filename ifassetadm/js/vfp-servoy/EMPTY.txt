@@ -1,0 +1,30 @@
+ EMPTY() - globals.EMPTY()
+
+
+Determines whether an expression evaluates to empty.
+
+ 
+VFP code example
+name = "Smith"
+? EMPTY(name)                      // Returns .F.
+? EMPTY("    ")                    // Returns .T.
+number = 0
+? EMPTY(number)                    // Returns .T.
+date = DATE()
+? EMPTY(date)                      // Returns .F.
+bool = .T.
+? EMPTY(bool)                      // Returns .F.
+ 
+
+ 
+Servoy code example
+var name =  "Smith";             
+globals.EMPTY(name);      // returns false
+globals.EMPTY("  ");      // returns true
+var number =  0;
+globals.EMPTY(number);    // returns true
+var date = new Date();
+globals.EMPTY(date);      // returns false
+var bool = true;
+globals.EMPTY(bool);      // returns false
+

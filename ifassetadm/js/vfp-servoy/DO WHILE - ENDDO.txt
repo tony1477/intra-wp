@@ -1,0 +1,50 @@
+ DO WHILE...ENDDO - while
+
+
+Executes a set of commands within a conditional loop. There are a few differences that should be noted. First notice the LOOP command in VFP that allows the flow to be reset to the beginning of the loop. Second notice that Javascript differentiates between a do while loop and a while loop. In the do while loop the action statement is carried out at least once, even if the test expression is false. In the while loop the action statement is only executed if the test expression is true.
+
+ 
+VFP code example
+counter = 0
+max=10
+DO WHILE counter <= max
+   counter = counter + 1
+   ? "Counter: " + counter
+ENDDO
+
+counter = 0
+max = 10
+DO WHILE .T.
+   counter = counter + 1
+   IF age > 65 
+      LOOP
+   ENDIF
+   IF counter >= max
+     EXIT
+   ENDIF
+   ? "Hello" + name
+ENDDO
+
+ 
+Servoy code example
+// output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+var counter = 0;
+var max = 10;
+while (counter <= max)
+{
+   counter += 1;
+   application.output(i);
+}
+
+// output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+counter = 0;
+do
+{
+   counter += 1;
+   application.output(i);
+
+   if(lStop){
+      break;
+   }
+}
+while (counter <= max) 

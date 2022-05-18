@@ -1,0 +1,18 @@
+ CMONTH() - globals.CMONTH()
+
+
+Returns the name of the month from a given date or DateTime expression.
+
+ 
+VFP code example
+d = DATE(2072,10,15)
+? CMONTH(d)      // October
+
+ 
+Servoy code example
+utils.stringFormat('%tB', new Array(new Date(2072,9,15)))
+
+// OR using the CMONTH() function alternative:
+
+var d = new Date(2072,9,15)              // MONTH 9 = OCTOBER  !!
+application.output(globals.CMONTH(d))      // October/oktober

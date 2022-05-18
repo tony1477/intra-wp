@@ -1,0 +1,14 @@
+ JUSTFNAME() - globals.JUSTFNAME()
+
+
+Returns just the filename from a complete path.
+
+ 
+VFP code example
+
+? JUSTFNAME("c:\test\Document1.doc")  && returns: Document1.doc
+
+ 
+Servoy code example
+
+globals.JUSTFNAME("c:\\test\\Document1.doc"); / returns: Document1.doc

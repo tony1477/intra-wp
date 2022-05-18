@@ -1,0 +1,20 @@
+ TRANSFORM() - globals.TRANSFORM()
+
+
+Returns a character string from an expression. In VFP the TRANSFORM() function also supports passing many formatcodes to format various types of data. In this (first) implementation only the conversion to a character string is supported.
+
+ 
+VFP code example
+
+? TRANSFORM(34.56)  && returns: "34.56"
+? TRANSFORM(DATE()) && returns: "12-4-2011"
+? TRANSFORM(.T.)    && returns: ".T."
+? TRANSFORM(.NULL.) && returns: ".NULL."
+
+ 
+Servoy code example
+
+globals.TRANSFORM(34.56);       // returns: "34.56"
+globals.TRANSFORM(new Date());  // returns: "12-4-2011"
+globals.TRANSFORM(true);        // returns: "true"
+globals.TRANSFORM(null);        // returns: "null"

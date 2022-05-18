@@ -1,0 +1,17 @@
+ FOR...NEXT - for
+
+
+Executes a set of commands within a conditional loop.
+
+ 
+VFP code example
+FOR i = 1 TO 3
+   ? "Counter value: " + TRANSFORM(i)
+NEXT
+
+ 
+Servoy code example
+for(var i=0; i<3; i++)
+{
+   application.output("Counter value: " + i);
+}

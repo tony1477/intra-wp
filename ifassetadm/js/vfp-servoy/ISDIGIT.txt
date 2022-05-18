@@ -1,0 +1,24 @@
+ ISDIGIT() - globals.ISDIGIT()
+
+
+ISDIGIT() returns true if the leftmost character in the specified character expression is an alphabetic character; otherwise ISDIGIT() returns false.
+
+ 
+VFP code example
+
+? ISDIGIT('Abc')          && returns .F.
+? ISDIGIT('Äbc')          && returns .F.
+? ISDIGIT('9')            && returns .T.
+? ISDIGIT('9ab')          && returns .T.
+? ISDIGIT('Ab89')         && returns .F.
+? ISDIGIT('_bcdef')       && returns .F.
+
+ 
+Servoy code example
+
+cString = "9ab";
+cString.charAt(0).match(/[^W0-9_]/)!=null;
+
+// alternatively
+
+globals.ISDIGIT("9ab");   // Returns true

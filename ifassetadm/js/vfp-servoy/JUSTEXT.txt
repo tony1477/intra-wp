@@ -1,0 +1,14 @@
+ JUSTEXT() - globals.JUSTEXT()
+
+
+Returns the characters of a file extension from a complete path.
+
+ 
+VFP code example
+
+? JUSTEXT("Document1.doc")          && returns: doc
+
+ 
+Servoy code example
+
+globals.JUSTEXT("Document1.doc");   // returns: doc 

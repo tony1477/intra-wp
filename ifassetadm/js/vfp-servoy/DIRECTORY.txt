@@ -1,0 +1,25 @@
+ DIRECTORY() - plugins.File
+
+
+Determines if the specified directory exists. Also the nFlags parameter can be used to differentiate in behaviour between normal directories and hidden directories.
+
+ 
+VFP code example
+? DIRECTORY("c:\temp\")   && .T. if the directory exists and is not hidden
+? DIRECTORY("c:\temp\",0) && .T. if the directory exists and is not hidden
+? DIRECTORY("c:\temp\",1) && .F. if the directory exists and is hidden
+ 
+
+ 
+Servoy code example
+var fs = plugins.file.convertToJSFile("c:\\temp\\");
+// true if file exists
+fs.exists();
+// true if file is hidden
+fs.isHidden();
+
+// alternatively:
+
+globals.DIRECTORY("c:\\temp\\");    // true if exists and not hidden
+globals.DIRECTORY("c:\\temp\\",0);  // true if exists and not hidden
+globals.DIRECTORY("c:\\temp\\",1);  // false if exists and is hidden

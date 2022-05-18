@@ -1,0 +1,18 @@
+ LOWER() - string.toLowerCase()
+
+
+Returns the specified character expression in lowercase.
+
+ 
+VFP code example
+myString = "Hello World"
+myString = LOWER(myString)
+
+** result: hello world
+
+ 
+Servoy code example
+var myString = "Hello World";
+myString = myString.toLowerCase();
+
+// result: hello world

@@ -1,0 +1,16 @@
+ REPLACE - globals.REPLACE()
+
+
+Updates table records.
+
+ 
+VFP code example
+USE customers
+m.city = customers.city
+REPLACE city WITH UPPER(m.city)
+thisform.refresh()
+
+ 
+Servoy code example
+var _cCity = foundset.city;
+foundset.city = _cCity;

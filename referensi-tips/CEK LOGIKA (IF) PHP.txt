@@ -1,0 +1,83 @@
+function combat_insert($char = 0, $user_id = 0, $combat_id, $type, $side, $hod = 1, $join = 0, $svit = 0, $k_komu = 0, $k_map_exp = 1, $k_map_gp = 1, $skill = 0, $func = 5, $delay, $no_rejoin = 0, $full_stats = 0)
+{
+    if ($char == 0 and $user_id == 0) {
+        return 0;
+    }
+    if ($char == 0) {
+        $check_user = myquery("SELECT * FROM game_users WHERE user_id=" . $user_id . "");
+        if (mysql_num_rows($check_user) > 0) {
+            $char = mysql_fetch_array($check_user);
+        } else {
+            $char = mysql_fetch_array(myquery("SELECT * FROM game_users_archive WHERE user_id=" . $user_id . ""));
+        }
+    }
+    $user_id = $char['user_id'];
+    $injury = ceil($char['injury'] / 13);
+    //Определим травму игрока
+    list($pol) = mysql_fetch_array(myquery("SELECT sex FROM game_users_data WHERE user_id=" . $user_id . ""));
+    if ($skill == 0) {
+        $skill = take_skills($user_id);
+    }
+    myquery("DELETE FROM combat_users WHERE user_id=" . $user_id . "");
+    myquery("DELETE FROM combat_users_exp WHERE user_id=" . $user_id . "");
+    //Восстановим жизни, ману, энергию, если надо
+    if ($full_stats == 1) {
+        $char['HP'] = $char['HP_MAX'];
+        $char['MP'] = $char['MP_MAX'];
+        $char['STM'] = $char['STM_MAX'];
+    }
+    $k_exp = skill_exp_effect($skill['MS_EXP'], $type) * $k_map_exp;
+    $k_gp = skill_gp_effect($skill['MS_GP'], $type) * $k_map_gp;
+    if ($svit > 0) {
+        $k_exp = 0;
+        if ($svit > 1) {
+            $k_gp = 0;
+        }
+    }
+    myquery("INSERT INTO combat_users (\n\t\tcombat_id,user_id,npc,time_last_active,name,clevel,reinc,side,\n\t\tHP,MP,STM,STR,DEX,SPD,VIT,NTL,PIE,HP_MAX,MP_MAX,STM_MAX,lucky,injury,\n\t\tk_komu,k_exp,k_gp,pol,avatar,sklon,race,clan_id,`join`,HP_start,hod_start,\n\t\tclass_type,class_level,MS_WEAPON,MS_KULAK,MS_PARIR,MS_ART,MS_LUK,MS_THROW,MS_BERSERK,MS_PRUDENCE,MS_VAMPIRE,MS_SPIKES,NPC_DEFENCE) \n\t\tVALUES (" . $combat_id . "," . $user_id . ",0," . time() . ",'" . $char['name'] . "'," . $char['clevel'] . "," . $char['reinc'] . "," . $side . ",\n\t\t" . $char['HP'] . "," . $char['MP'] . "," . $char['STM'] . "," . $char['STR'] . "," . $char['DEX'] . "," . $char['SPD'] . "," . $char['VIT'] . "," . $char['NTL'] . "," . $char['PIE'] . ",\t\t\t\n\t\t" . $char['HP_MAX'] . "," . $char['MP_MAX'] . "," . $char['STM_MAX'] . ",'" . $char['lucky'] . "','" . $injury . "',\n\t\t" . $k_komu . "," . $k_exp . "," . $k_gp . ",'" . $pol . "','" . $char['avatar'] . "','" . $char['sklon'] . "',\n\t\t'" . mysql_result(myquery("SELECT name FROM game_har WHERE id=" . $char['race'] . ""), 0, 0) . "'," . $char['clan_id'] . "," . $join . "," . $char['HP_MAX'] . ",'" . $hod . "',\n\t\t" . $skill['class_type'] . "," . $skill['class_level'] . "," . $skill['MS_WEAPON'] . "," . $skill['MS_KULAK'] . "," . $skill['MS_PARIR'] . "," . $skill['MS_ART'] . "," . $skill['MS_LUK'] . "," . $skill['MS_THROW'] . ",\n\t\t" . $skill['MS_BERSERK'] . "," . $skill['MS_PRUDENCE'] . "," . $skill['MS_VAMPIRE'] . "," . $skill['MS_SPIKES'] . "," . $skill['NPC_DEFENCE'] . ")\n\t\t");
+    combat_setFunc($user_id, $func, $combat_id);
+    set_delay_reason_id($user_id, $delay);
+    //Отработаем действие навыка "Паладин"
+    if ($skill['PALADIN'] > 0) {
+        $r = mt_rand(1, 100);
+        if ($r <= $skill['PALADIN'] + 5) {
+            if ($hod == 0) {
+                $hod = 1;
+            }
+            $effect = $skill['PALADIN'] * 5;
+            insert_fast_effect($user_id, $user_id, $combat_id, $hod + $join, 41, $effect);
+        }
+    }
+    if ($no_rejoin == 1) {
+        list($host) = mysql_fetch_array(myquery("SELECT host FROM game_users_active WHERE user_id=" . $user_id . ""));
+        list($host_more) = mysql_fetch_array(myquery("SELECT host_more FROM game_users_active_host WHERE user_id=" . $user_id . ""));
+        myquery("INSERT INTO combat_lose_user (combat_id,user_id,host,host_more) VALUES (" . $combat_id . "," . $user_id . "," . $host . ",'" . $host_more . "')");
+    }
+    //Проверим - надо ли вести лог боя
+    $check1 = 0;
+    $check2 = 0;
+    if ($hod == 1) {
+        $check = myquery("SELECT * FROM combat_users WHERE npc=1 AND combat_id=" . $combat_id . "");
+        if (mysql_num_rows($check) == 0) {
+            $check1 = 1;
+        }
+    } else {
+        $check = myquery("SELECT * FROM game_combats_users WHERE boy=" . $combat_id . "");
+        if (mysql_num_rows($check) > 0) {
+            $check2 = 1;
+        }
+    }
+    if ($check1 == 1 or $check2 == 1) {
+        myquery("INSERT INTO game_combats_users (boy, user_id, side) VALUES (" . $combat_id . ", " . $user_id . ", " . $side . ")");
+    }
+    $sel_arco = myquery("SELECT * FROM arcomage_users WHERE user_id=" . $user_id . "");
+    if (mysql_num_rows($sel_arco) > 0) {
+        $arco = mysql_fetch_array($sel_arco);
+        myquery("DELETE FROM arcomage WHERE id='" . $arco['arcomage_id'] . "'");
+        myquery("DELETE FROM arcomage_users_cards WHERE arcomage_id='" . $arco['arcomage_id'] . "'");
+        myquery("DELETE FROM arcomage_history WHERE arcomage_id='" . $arco['arcomage_id'] . "'");
+        myquery("DELETE FROM arcomage_users WHERE arcomage_id='" . $arco['arcomage_id'] . "'");
+    }
+    myquery("DELETE FROM arcomage_call WHERE user_id=" . $user_id . "");
+    ForceFunc($user_id, 1);
+}

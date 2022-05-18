@@ -1,0 +1,12 @@
+ SECONDS() - globals.SECONDS()
+
+
+Returns the number of seconds that have elapsed since midnight.
+
+ 
+VFP code example
+? SECONDS()                      // number of seconds since midnight
+
+ 
+Servoy code example
+application.output(globals.SECONDS()) // number of seconds since midnight 

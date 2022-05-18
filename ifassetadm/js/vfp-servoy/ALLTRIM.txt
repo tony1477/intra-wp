@@ -1,0 +1,6 @@
+VFP code example
+myString = ALLTRIM(" Hello ")
+
+ 
+Servoy code example
+var myString = utils.stringTrim(" Hello ")

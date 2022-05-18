@@ -1,0 +1,26 @@
+ RAND() - Math.random()
+
+
+Returns a random number between 0 and 1.
+
+ 
+VFP code example
+? RAND()            // Returns a random value between 0 and 1
+? RAND(100)         // Use seed value to influence the generation
+? RAND(-1)          // Uses a seed value from the system clock
+ 
+
+ 
+Servoy code example
+Math.random();     // returns a random value between 0 and 1
+
+globals.RAND(1,6); // roll the dice and generate a value of 1-6 
+
+
+Note: RAND() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+In Visual FoxPro a seed value parameter is available and the documenation states that the best random results wil be obtained by calling the RAND() function the first time with a negative argument the first time and subsequently without any argument. When searching for simular discussion around Javascripts Math.random() method I found a nice article that states that passing seed values is nonsense because they will be ignored by Javascript. However, it does warn about using the round function and urges you to use the Math.floor() function instead.
+
+Although Visual FoxPro does not have min and max parameters that let you specify between which range you want to generate a random number I decided to improve the functionality of the RAND() function and add min and max parameters and use the code as described in this article. Special thanks to Regina Straminski for her excellent article. 

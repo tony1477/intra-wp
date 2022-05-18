@@ -1,0 +1,27 @@
+ VERSION() - application.getVersion()
+
+
+Returns the version information of VFP/Servoy.
+
+ 
+VFP code example
+? VERSION()    && Visual FoxPro 09.00.0000.5815 for Windows
+? VERSION(1)   && Visual FoxPro date and serial number
+? VERSION(2)   && Version type (0=runtime, 1=standard ed. 2=prof.ed.
+? VERSION(3)   && Localized Visual FoxPro language
+? VERSION(4)   && Visual FoxPro version number in easily parsed format
+? VERSION(5)   && Visual FoxPro version number in format Mmm.
+
+// test if running in developer edition
+? VERSION(2)=2  && returns .T. when running developer edition
+
+ 
+Servoy code example
+application.getVersion();     // i.e.: 6.0.0 a6 
+
+// test if running in developer edition
+application.isInDeveloper();  
+
+// alternatively:
+
+globals.VERSION(); 

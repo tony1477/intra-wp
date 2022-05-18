@@ -1,0 +1,26 @@
+ DTOS() - globals.DTOS()
+
+
+Returns a character-string date in a yyyymmdd format from a specified date(time) expression.
+
+ 
+VFP code example
+DTOS(DATE())   // "20110415"  suitable for indexing
+
+INDEX ON DTOS(dInvDate) TAG dateIndex
+
+ 
+Servoy code example
+var d = new Date();
+utils.dateFormat(d,'yyyyMMdd')
+
+// or alternatively:
+
+var d = new Date();
+globals.DTOS(d)  // "20110415"  suitable for indexing
+
+Note: DTOS() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+This function basically does the same as the DTOC(date, 1) function. 

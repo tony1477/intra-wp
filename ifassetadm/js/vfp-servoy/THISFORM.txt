@@ -1,0 +1,52 @@
+ Thisform() - forms.frmFormName
+
+
+Thisform returns an object reference to the current form in VFP. In Servoy this is slightly more complicated but not without reason. In VFP all properties and methods are publicly exposed and can be manipulated from outside the form. When adding PEMS you can make them private but the default properties are allways exposed.
+ 
+
+In Servoy it's the other way around. By default a forms properties and method are private (not accessible from outside the form) unless they have been made public.
+
+ 
+
+The form width for example is allways public in  VFP and can be manipulated from outside the form. That's nice when you need it but not so nice when you don't want it. In Servoy the width property is only accesible from inside the form. However a getWidth() method has been added to allow readonly access to the property from outside the form. So if you want to make a property public create a method for it. This is comparable with VFP's access/assign options that you can set when creating custom PEMS.
+
+ 
+
+Also note that Servoy forms have a controller through which a wealth of functions can be called which you would normally have to program yourself including all refresh logic which can be pretty tricky in VFP especially when you use multiple related grids which are used for data-entry and have  validation rules which change data in them. In Servoy allmost all refresh logic is handled automatically. Try it!
+
+ 
+
+ 
+VFP code example
+? thisform.Name                     // Returns the name of the form
+
+? frmCustomer.Name                  // reference to the form by objectname
+
+? thisform.txtNameField             // reference to a field inside a form
+
+? frmCustomer.txtNameField          // reference to a field outside a form
+
+? _vfp.Forms.Item(1).myMethod()     // form collection reference
+
+ 
+Servoy code example
+var frm = currentcontroller.getName();  // returns the name of the form
+
+forms.frmCustomer;                  // returns the name of the form
+
+elements.txtNameField;              // reference to a field (in the form)
+
+forms.frmCustomer.elements.txtNameField; // field reference outside form
+
+forms[frm].myMethod();                   // form collection reference
+
+// reference to the subform in the active page of a tabpanel
+var tab = forms.frmCustomer.elements.body_tab.tabIndex;
+var formName = forms.frmCustomer.elements.body_tab.getTabFormNameAt(tab);
+ 
+
+Note that many form-level control features are not available simply because Servoy takes care of them and you don't have to worry about it. Also note that a Servoy Form has a controller with a lot of methods for "controlling" your form. See the controller object node under each form in the Solution Explorer for a list of properties and methods.
+
+Also note that in Servoy, forms can be combined together so that you may want to reference subforms individually as is shown in the code example above.
+
+Third note is a warning not to try to create a thisform() function that works the same as in VFP or you'll generate a type-safety warning. Better is to reference the form explicitly. That way intellisense also works.

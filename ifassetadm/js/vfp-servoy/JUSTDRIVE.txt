@@ -1,0 +1,15 @@
+ JUSTDRIVE() - globals.JUSTDRIVE()
+
+
+Returns the drive letter from a complete path.
+
+ 
+VFP code example
+
+? JUSTDRIVE(FULLPATH(CURDIR())) && returns: C:
+
+ 
+Servoy code example
+
+var cPath = plugins.file.getHomeDirectory().getPath();  
+globals.JUSTDRIVE(cPath);                     // returns: C:

@@ -1,0 +1,14 @@
+ JUSTPATH() - globals.JUSTPATH()
+
+
+Returns just the path from a complete path and filename.
+
+ 
+VFP code example
+
+? JUSTPATH("c:\test\Document1.doc")  && returns: c:\test\
+
+ 
+Servoy code example
+
+globals.JUSTPATH("c:\\test\\Document1.doc"); / returns: c:\test\ 

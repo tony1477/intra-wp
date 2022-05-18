@@ -1,0 +1,24 @@
+ GETWORDNUM() - utils.stringMiddleWords()
+
+
+Returns a specified word from a string.
+
+ 
+VFP code example
+
+cString = "AAA aaa, BBB bbb, CCC ccc"
+? GETWORDNUM(cString, 3)          && Displays BBB
+? GETWORDNUM(cString, 3, ",")     && Displays CCC ccc
+
+ 
+Servoy code example
+
+cString = "AAA aaa, BBB bbb, CCC ccc";
+utils.stringMiddleWords(cString, 3, 1);         // returns BBB
+
+// alternatively
+
+cString = "AAA aaa, BBB bbb, CCC ccc";
+globals.GETWORDNUM(cString, 3);                 // returns BBB
+globals.GETWORDNUM(cString, 3, ",");            // returns CCC ccc
+

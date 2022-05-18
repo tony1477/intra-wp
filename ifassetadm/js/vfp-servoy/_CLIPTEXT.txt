@@ -1,0 +1,20 @@
+ _CLIPTEXT - application.getClipboardString() | application.setClipboardContent()
+
+
+Get or set the contents of the Clipboard. If a string parameter is passed, the contents will be placed on the Clipboard. If no parameter is passed the current contents of the Clipboard will be returned. In VFP the Clipboard is accessible through a system variable. Since it is not possible to implent Get/Set on a variable in Servoy a _CLIPTEXT function is the next best thing.
+
+ 
+VFP code example
+cText = _CLIPTEXT && gets the clipboard contents and puts them in a string
+_CLIPTEXT = "Hello" && places a string on the clipboard
+
+ 
+Servoy code example
+var cText = application.getClipboardString();  // retrieves the clipboard
+application.setClipboardContent("Hello");      // sets the clipboard
+
+// alternatively:
+
+var cText = globals._CLIPTEXT();               // retrieves the clipboard
+globals._CLIPTEXT("Hello");                    // sets the clipboard
+

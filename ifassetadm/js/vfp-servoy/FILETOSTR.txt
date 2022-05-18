@@ -1,0 +1,16 @@
+ FILETOSTR() - plugins.file.readTXTFile()
+
+
+Returns the contents of a file as a character string.
+
+ 
+VFP code example
+cText = FILETOSTR("c:\temp\hello.txt") && appends string  
+
+ 
+Servoy code example
+var cText = plugins.file.readTXTFile("c:\\temp\\hello.txt");
+
+// alternatively:
+
+var cText = globals.FILETOSTR("c:\\temp\\hello.txt"); 

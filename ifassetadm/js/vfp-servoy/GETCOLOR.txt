@@ -1,0 +1,16 @@
+ GETCOLOR() - application.showColorChooser()
+
+
+Shows the Color Chooser Dialog. In VFP a default colornumber can be passed. In servoy a default colorstring can be passed. However most of the time you will call this function without any parameters, the point is to let the user choose a color.
+
+ 
+VFP code example
+? GETCOLOR()         && returns a color number such as 255
+
+ 
+Servoy code example
+application.showColorChooser();  // returns a color string such as #ff0000
+
+// alternatively:
+
+globals.GETCOLOR(); 

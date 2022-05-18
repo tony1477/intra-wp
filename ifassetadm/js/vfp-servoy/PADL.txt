@@ -1,0 +1,20 @@
+ PADL() - globals.PADL()
+
+
+Returns a string with the length of nLength padded with cPadChar on the left.
+
+ 
+VFP code example
+myVar = "9"
+? PADL(myVar,2,"0")       && Outputs 09
+
+ 
+Servoy code example
+var myVar = "9";
+application.output(globals.PADL(myVar,2,"0"))  // Outputs 09
+
+Note: PADL() is a function of the VFP2Servoy Toolkit
+
+ 
+Conclusion
+When you look at the code of the PADL function in the VFP2Servoy Toolkit you see that there is no easy way to do this in Servoy (or we haven't found it yet) so here using the function instead of the Servoy syntax saves time. 

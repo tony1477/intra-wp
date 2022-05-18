@@ -1,0 +1,22 @@
+ GETWORDCOUNT() - utils.stringWordCount()
+
+
+Counts the words in a string. The VFP2Servoy implementation als supports a delimiter parameter (see sample).
+
+ 
+VFP code example
+
+cString = "AAA aaa, BBB bbb, CCC ccc"
+? GETWORDCOUNT(cString)          && Displays 6
+
+ 
+Servoy code example
+
+cString = "AAA aaa, BBB bbb, CCC ccc";
+utils.stringWordCount(cString);                 // returns 6
+
+// alternatively
+
+cString = "AAA aaa, BBB bbb, CCC ccc";
+globals.GETWORDCOUNT(cString);                  // returns 6
+globals.GETWORDCOUNT(cString, ",");             // returns 3

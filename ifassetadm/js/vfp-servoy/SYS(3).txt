@@ -1,0 +1,17 @@
+ SYS(3) - plugins.file.createTempFile()
+
+
+Returns a legal file name that can be used to create temporary files. Servoys implementation is much more elegant than VFP's SYS(3) function. Keep in mind that VFP only generates a number that can be used as a temporary filename and that you have to add prefix and postfix such as temp_ and .tmp yourself. With the createTempFile function you can specify these as parameters and the users tempfile path is added as well.
+
+ 
+VFP code example
+? SYS(3)         && Generates a legal file name to create a temporary file
+
+ 
+Servoy code example
+plugins.file.createTempFile("temp_", ".txt"); // generate tempfile name 
+// i.e.: C:\Users\MULTIT~1\AppData\Local\Temp\temp_2549553530386536937.txt
+
+// alternatively:
+
+globals.SYS(3); 

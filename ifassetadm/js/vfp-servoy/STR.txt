@@ -1,0 +1,19 @@
+ STR() - utils.numberFormat()
+
+
+Returns the character equivalent of a numeric expression.
+
+ 
+VFP code example
+
+? STR(17.456, 2) && returns: 17.46 or 17,46 depending on locale
+
+ 
+Servoy code example
+
+utils.numberFormat(17.456, 2) //returns 17.46 or 17,46 depending on locale
+utils.numberFormat(100006.749, '#,###.00'); //returns 100,006.75
+ 
+// alternatively:
+
+globals.STR(17.456, 2);  // returns: 17.46 or 17,46 depending on locale

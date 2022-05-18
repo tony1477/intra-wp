@@ -1,0 +1,35 @@
+ GETFILE() - plugins.file.showFileOpenDialog()
+
+
+Displays the Open File dialog box. The implementation in VFP is slightly different from the implementation in Servoy. The GETFILE() function in the VFP2Servoy Toolkit combines a bit of both. A nice addition for example is the ability to multiselect files.
+
+Note: The GETFILE() function returns JSFile objects from which you can retrieve all the file properties and file manipulation methods. This is more powerful than just returning a string with the filename and path.
+
+ 
+VFP code example
+cFile = GETFILE(".txt") && select a file
+
+ 
+Servoy code example
+// returns JSFile (see plugins.file.JSFile for list of props & functions)
+var cFile=plugins.file.showFileOpenDialog(1, "c:\\temp\\", false, ".txt");
+cFile.getPath();
+cFile.size();
+cFile.lastModified();
+
+// returns selected files as an array of JSFile objects
+var aFiles = plugins.file.showFileOpenDialog(1, "c:\\temp\\", true,
+     [".txt",".pdf"], "c:\\temp\\", true, "", "Select one or more files");
+aFiles[1].getPath();
+aFiles[1].size();
+
+// alternatively:
+
+// returns JSFile (see plugins.file.JSFile for list of props & functions)
+var cFile = globals.GETFILE(".txt", "c:\\temp\\");
+cFile.getPath();
+
+// returns selected files as an array of JSFile objects
+var aFiles = globals.GETFILE([".txt",".pdf"], "c:\\temp\\", true, "",
+             "select one or more files");
+aFiles[1].getPath();

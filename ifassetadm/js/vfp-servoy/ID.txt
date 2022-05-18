@@ -1,0 +1,12 @@
+ ID() - globals.ID()
+
+
+returns network machine information when using Visual FoxPro in a network environment. The same functionality is available by using SYS(0).
+
+ 
+VFP code example
+? ID()                      // returns machine id and user id
+
+ 
+Servoy code example
+application.getHostName() + " # " + security.getSystemUserName()

@@ -1,0 +1,21 @@
+ COPY FILE - plugins.file.copyFile()
+
+
+The COPY FILE statement alternative in Servoy is implemented through the file plugin with lots of file and directory functions in it. Note that VFP's SET SAFETY command determines if any existing file is overwritten, which is the default behaviour of the fileCopy() function in Servoy.
+
+NOTE: You cannot specify a file path in Servoy with single backslashes in it. The backslash is used to specify special characters (\t=tab for instance). You will have to remember to always use TWO backslashes instead of one to specify a single backslash (c:\\temp\\ instead of c:\temp\). We can't solve this in the function because "c:\temp" will arive in the parameter as "c: temp" (with a tab in it).
+
+You cannot use wildcard characters in filenames in Servoy.
+
+ 
+VFP code example
+COPY FILE c:\temp\test.xml TO c:\temp\test.bak   && copies the file
+COPY FILE c:\temp\*.xml TO c:\temp\*.bak   && copies all xml files
+
+ 
+Servoy code example
+plugins.file.copyFile("c:\\temp\\test.xml", "c:\\temp\\test.bak);
+
+// alternatively:
+
+globals.COPYFILE("c:\\temp\\test.xml", "c:\\temp\\test.bak); 

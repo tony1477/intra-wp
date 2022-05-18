@@ -1,0 +1,14 @@
+ SPACE() - globals.SPACE()
+
+
+Returns a character string composed of a specified number of spaces.
+
+ 
+VFP code example
+
+? SPACE(3) && returns: "   "
+
+ 
+Servoy code example
+
+globals.SPACE(3);  // returns: "   "

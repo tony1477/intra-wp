@@ -1,0 +1,20 @@
+ RECCOUNT() - foundset.getSize()
+
+
+Returns the number of records in the specified foundset.
+
+ 
+VFP code example
+
+? RECCOUNT()   && returns the number of records in the current table
+? RECCOUNT("customers")  && returns the number of rows in customers table
+
+ 
+Servoy code example
+foundset.getSize();  // returns the number of rows in the foundset !!
+
+databaseManager.getFoundSetCount(foundset); // number of rows in the table
+
+// Alternatively:
+
+globals.RECCOUNT(foundset);    // returns the number of rows  

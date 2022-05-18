@@ -1,0 +1,16 @@
+ SET MESSAGE TO - application.set StatusText
+
+
+Set statusbar text and tooltip info.
+
+ 
+VFP code example
+SET STATUS BAR ON
+SET MESSAGE TO "Record has been deleted"   && set status info
+
+ 
+Servoy code example
+application.setStatusText("Record deleted", "Record has been deleted");      
+// alternatively:
+
+globals.SET_MESSAGE_TO("Record deleted", "Record has been deleted"); 

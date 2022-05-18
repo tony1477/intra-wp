@@ -1,0 +1,18 @@
+ STUFF() - globals.STUFF()
+
+
+Returns a character string created by replacing a specified number of characters in a character expression with another character expression.
+
+ 
+VFP code example
+
+? STUFF("Hello World", 7, 0, "there ")       && returns: Hello there World
+? STUFF("Hello there World", 7, 6, "in my ") && returns: Hello in my World
+? STUFF("Hello there World", 7, 6, "")       && returns: Hello World
+
+ 
+Servoy code example
+
+globals.STUFF("Hello World", 7, 0, "there ");// returns: Hello there World
+globals.STUFF("Hello World", 7, 6, "in my ");// returns: Hello there World
+globals.STUFF("Hello World", 7, 6, "");      // returns: Hello World

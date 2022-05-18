@@ -1,0 +1,17 @@
+ OCCURS() - utils.stringPatternCount()
+
+
+Returns the number of times a character expression occurs within another character expression.
+
+ 
+VFP code example
+? OCCURS("a", "abracadabra")                   && returns 5
+ 
+
+ 
+Servoy code example
+utils.stringPatternCount("abracadabra", "a");  // returns 5
+
+// alternatively:
+
+globals.OCCURS("a", "abracadabra");            // returns 5 

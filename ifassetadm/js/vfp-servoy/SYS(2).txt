@@ -1,0 +1,12 @@
+ SYS(2) - globals.SYS(2)
+
+
+Returns the number of seconds that have elapsed since midnight.
+
+ 
+VFP code example
+? SYS(2)                      // number of seconds since midnight
+
+ 
+Servoy code example
+application.output(globals.SYS(2)) // number of seconds since midnight 

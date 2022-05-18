@@ -1,0 +1,28 @@
+VFP code example
+? ADIR(aTest, "c:\temp\")   && fills two-dim.array and returns filecount
+? ADIR(aTest, "c:\temp\", "*.prg") && just get the programs
+? ADIR(aTest, "c:\temp\", "???_*", "D") && just dirs starting with mask
+
+? aTest(10,1) && filename
+? aTest(10,2) && filesize
+? aTest(10,3) && date modified
+? aTest(10,4) && time modified
+? aTest(10,5) && attributes
+
+ 
+Servoy code example
+var dirArray = plugins.file.getFolderContents("c:\\temp\\");
+var dirArray = plugins.file.getFolderContents("c:\\temp\\", ".prg");
+var dirArray = plugins.file.getFolderContents("c:\\temp\\", "", 2);
+
+dirArray[1].getName()          // name of the file or directory
+dirArray[1].size()             // filesize
+dirArray[1].lastModified()     // filesize
+dirArray[1].isHidden()         // true if hidden
+dirArray[1].getContentType()   // ie application/zip, application/pdf etc.
+
+// alternatively:
+
+globals.ADIR("c:\\temp\\");          // array with jsfile objects
+globals.ADIR("c:\\temp\\", ".prg");  // just programs
+globals.ADIR("c:\\temp\\", "", 2);   // only directories 

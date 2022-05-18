@@ -1,0 +1,15 @@
+VFP code example
+
+cString = "Hé"
+? ASC(SUBSTR(cString,2,1))  && returns 233
+
+ 
+Servoy code example
+
+var cString = "Hé";
+application.output(cString.charCodeAt(1))  // outputs 233
+
+// Watch out for the fact that the charCodeAt() function expects a
+// zero-based index position. To get the charCode for the first
+// character in the string you would have to pass in a 0 as a
+// parameter

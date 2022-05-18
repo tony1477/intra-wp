@@ -1,0 +1,26 @@
+ ROUND() - Math.round()
+
+
+Although both Servoy and Javascript have a round function they are not the same. The Math.round() function only rounds a number to an integer whereas Servoys utils.numberFormat() returns a numeric expression rounded to a specified number of decimal places, however it returns a localized string! The ROUND() function in the VFP2Servoy Toolkit was designed to mimic the ROUND() functionality as it has been implemented in VFP.
+
+ 
+VFP code example
+ROUND(23.463873,0)            && Returns 23
+ROUND(23.463873,1)            && Returns 23.5
+ROUND(23.463873,2)            && Returns 23.46
+ROUND(23.463873,3)            && Returns 23.464
+ROUND(23.463873,4)            && Returns 23.4639
+ROUND(23.463873,5)            && Returns 23.46387
+ 
+
+ 
+Servoy code example
+Math.Round(23.463873, 2);       // returns 23.46 as a string!
+utils.numberFormat(23.463873, 2);       // returns 23.46 as a string!
+      
+globals.ROUND(23.463873,0);  // returns 23.0
+globals.ROUND(23.463873,1);  // returns 23.5
+globals.ROUND(23.463873,2);  // returns 23.46
+globals.ROUND(23.463873,3);  // returns 23.464
+globals.ROUND(23.463873,4);  // returns 23.4639
+globals.ROUND(23.463873,5);  // returns 23.46387 

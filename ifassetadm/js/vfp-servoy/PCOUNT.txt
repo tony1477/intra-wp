@@ -1,0 +1,19 @@
+ PCOUNT() - arguments.length
+
+
+Returns the number of parameters passed to the current function/method.
+
+ 
+VFP code example
+
+? PCOUNT()          && returns: number of parameters
+
+ 
+Servoy code example
+
+arguments.length
+
+// Alternatively:
+
+globals.PCOUNT();   // returns: number of parameters
+
